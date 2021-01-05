@@ -1405,7 +1405,7 @@ BO_ 954 mSWA_1: 8 SWA
  SG_ SWA_Car_detected_right : 45|1@1+ (1,0) [0|1] "" XXX
  SG_ SWA_Blindspot_Warning_right : 44|1@1+ (1,0) [0|1] "" XXX
  SG_ SWA_Car_detected_left : 29|1@1+ (1,0) [0|1] "" XXX
- SG_ SWA_Blingspot_Warning_left : 28|1@1+ (1,0) [0|1] "" XXX
+ SG_ SWA_Blindspot_Warning_left : 28|1@1+ (1,0) [0|1] "" XXX
  SG_ SWA_Sta_aktiv : 20|1@1+ (1,0) [0|1] ""  Gateway_Kbi_VW_A
  SG_ SWA_Sta_passiv : 19|1@1+ (1,0) [0|1] ""  Gateway_Kbi_VW_A
  SG_ SWA_Gong : 16|2@1+ (1,0) [0|3] ""  Gateway_Kbi_VW_A
