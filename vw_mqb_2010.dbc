@@ -1467,13 +1467,14 @@ BO_ 792 Kamera_Status: 8 XXX
 BO_ 981 Licht_Anf_01: 8 XXX
 
 BO_ 870 Blinkmodi_02: 8 XXX
- SG_ Turn_Signal_State : 23|2@1+ (1,0) [0|1] "" XXX
  SG_ Left_Turn_Exterior_Bulb_1 : 25|1@1+ (1,0) [0|1] "" XXX
  SG_ Right_Turn_Exterior_Bulb_1 : 26|1@1+ (1,0) [0|1] "" XXX
  SG_ Left_Turn_Exterior_Bulb_2 : 27|1@1+ (1,0) [0|1] "" XXX
  SG_ Right_Turn_Exterior_Bulb_2 : 28|1@1+ (1,0) [0|1] "" XXX
  SG_ Fast_Send_Rate_Active : 37|1@1+ (1,0) [0|1] "" XXX
  SG_ Hazard : 20|1@1+ (1,0) [0|1] "" XXX
+ SG_ Comfort_Signal_Left : 23|1@1+ (1,0) [0|1] "" XXX
+ SG_ Comfort_Signal_Right : 24|1@1+ (1,0) [0|1] "" XXX
 
 BO_ 1385 HVEM_04: 8 XXX
 
@@ -1778,7 +1779,6 @@ CM_ SG_ 780 SetSpeed "ACC set speed";
 CM_ SG_ 780 Abstand "Following distance";
 CM_ SG_ 780 Folgefahrt "Following another vehicle";
 CM_ SG_ 780 SetAbstand "Set following distance";
-CM_ SG_ 870 Turn_Signal_State "Looks like 0 inactive, 1 comfort right, 2 comfort left, might be 3 for hazards?";
 CM_ SG_ 870 Left_Turn_Exterior_Bulb_1 "Probably front";
 CM_ SG_ 870 Right_Turn_Exterior_Bulb_1 "Probably front";
 CM_ SG_ 870 Left_Turn_Exterior_Bulb_2 "Probably rear";
