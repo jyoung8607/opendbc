@@ -41,16 +41,16 @@ BO_ 290 ACC_06: 8 Gateway_MQB
  SG_ COUNTER : 8|4@1+ (1,0) [0|15] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_limitierte_Anfahrdyn : 12|1@1+ (1,0) [0|1] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_zul_Regelabw_unten : 16|6@1+ (0.024,0) [0|1.512] "Unit_MeterPerSeconSquar" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
- SG_ ACC_StartStopp_Info : 22|2@1+ (1,0) [0|3] "" Motor_Diesel_MQB,Motor_Otto_MQB
- SG_ ACC_Sollbeschleunigung_02 : 24|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_zul_Regelabw_oben : 35|5@1+ (0.0625,0) [0|1.9375] "Unit_MeterPerSeconSquar" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_neg_Sollbeschl_Grad_02 : 40|8@1+ (0.05,0) [0|12.75] "Unit_MeterPerCubicSecon" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_pos_Sollbeschl_Grad_02 : 48|8@1+ (0.05,0) [0|12.75] "Unit_MeterPerCubicSecon" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
- SG_ ACC_Anfahren : 56|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
- SG_ ACC_Anhalten : 57|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_Typ : 58|2@1+ (1,0) [0|3] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_Status_ACC : 60|3@1+ (1,0) [0|7] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ACC_Minimale_Bremsung : 63|1@1+ (1,0) [0|1] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
+ SG_ ACC_StartStopp_Info : 22|2@1+ (1,0) [0|3] "" Motor_Diesel_MQB,Motor_Otto_MQB
+ SG_ ACC_Sollbeschleunigung_02 : 24|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
+ SG_ ACC_Anhalten : 57|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
+ SG_ ACC_Anfahren : 56|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
 
 BO_ 279 ACC_10: 8 Gateway_MQB
  SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" Airbag_MQB
@@ -288,7 +288,6 @@ BO_ 262 ESP_05: 8 Gateway_MQB
  SG_ ESP_Schwelle_Unterdruck : 14|2@1+ (1,0) [0|3] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ESP_Bremsdruck : 16|10@1+ (0.3,-30) [-30|276.6] "Unit_Bar" Airbag_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ESP_Fahrer_bremst : 26|1@1+ (1,0) [0|1] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
- SG_ ESP_Verz_TSK_aktiv : 27|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ESP_Lenkeingriff_ADS : 28|1@1+ (1,0) [0|1] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ESP_Konsistenz_TSK : 29|1@1+ (1,0) [0|1] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ESP_Bremsruck_AWV2 : 30|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
@@ -316,6 +315,7 @@ BO_ 262 ESP_05: 8 Gateway_MQB
  SG_ ESP_Verzoeg_EPB_verf : 60|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ ESP_Status_Bremsdruck : 61|1@1+ (1,0) [0|1] "" Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ESP_Anforderung_EPB : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_Verz_TSK_aktiv : 27|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
 
 BO_ 914 ESP_07: 8 Gateway_MQB
  SG_ ESP_07_CRC : 0|8@1+ (1,0) [0|255] "" Airbag_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
@@ -689,11 +689,11 @@ BO_ 134 LWI_01: 8 Gateway_MQB
  SG_ LWI_Sensorstatus : 12|1@1+ (1,0) [0|1] "" Airbag_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ LWI_QBit_Sub_Daten : 13|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ LWI_QBit_Lenkradwinkel : 15|1@1+ (1,0) [0|1] "" Airbag_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
- SG_ LWI_Lenkradwinkel : 16|13@1+ (0.1,0) [0|800] "Unit_DegreOfArc" Airbag_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ LWI_VZ_Lenkradwinkel : 29|1@1+ (1,0) [0|1] "" Airbag_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ LWI_VZ_Lenkradw_Geschw : 30|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ LWI_Lenkradw_Geschw : 31|9@1+ (5,0) [0|2500] "Unit_DegreOfArcPerSecon" Vector__XXX
  SG_ LWI_Sub_Daten : 40|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ LWI_Lenkradwinkel : 16|13@1+ (0.1,0) [0|800] "Unit_DegreOfArc" Airbag_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
 
 BO_ 263 Motor_04: 8 Motor_Diesel_MQB
  SG_ MO_Istgang : 8|4@1+ (1,0) [0|15] "" Gateway_MQB
@@ -768,7 +768,6 @@ BO_ 958 Motor_14: 8 Motor_Diesel_MQB
  SG_ MO_Freig_Reku : 16|2@1+ (1,0) [0|3] "" Gateway_MQB
  SG_ MO_Kl_75 : 18|1@1+ (1,0) [0|1] "" Gateway_MQB
  SG_ MO_Kl_50 : 19|1@1+ (1,0) [0|1] "" Gateway_MQB,LEH_MQB
- SG_ MO_Gangposition : 20|4@1+ (1,0) [0|15] "" Gateway_MQB
  SG_ MO_StartStopp_Fahrerwunsch : 24|2@1+ (1,0) [0|3] "" Gateway_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
  SG_ MO_HYB_Fahrbereitschaft : 26|1@1+ (1,0) [0|1] "" BMS_MQB,Gateway_MQB
  SG_ MO_Ext_E_Fahrt_aktiv : 27|1@1+ (1,0) [0|1] "" Gateway_MQB
@@ -793,6 +792,7 @@ BO_ 958 Motor_14: 8 Motor_Diesel_MQB
  SG_ MO_QBit_Gangposition : 50|1@1+ (1,0) [0|1] "" Gateway_MQB
  SG_ MO_Signalquelle_Gangposition : 51|1@1+ (1,0) [0|1] "" Gateway_MQB
  SG_ MO_Remotestart_Betrieb : 52|1@1+ (1,0) [0|1] "" Gateway_MQB
+ SG_ MO_Gangposition : 20|4@1+ (1,0) [0|15] "" Gateway_MQB
 
 BO_ 1631 Motor_16: 8 Motor_Diesel_MQB
  SG_ TSK_QBit_Steigung : 12|1@1+ (1,0) [0|1] "" Gateway_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
@@ -805,8 +805,6 @@ BO_ 1631 Motor_16: 8 Motor_Diesel_MQB
  SG_ TSK_Steigung : 56|8@1+ (0.8,-101.6) [-101.6|101.6] "Unit_PerCent" Gateway_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
 
 BO_ 812 Motor_17: 8 Motor_Diesel_MQB
- SG_ MO_Prio_MAX_Wunschdrehzahl : 12|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
- SG_ MO_Prio_MIN_Wunschdrehzahl : 13|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
  SG_ MO_Luftpfad_aktiv : 14|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ MO_v_Begrenz_Aktivierbar : 15|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ MO_Drehzahlbeeinflussung : 16|8@1+ (0.39,0) [0|99.45] "Unit_PerCent" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
@@ -814,6 +812,8 @@ BO_ 812 Motor_17: 8 Motor_Diesel_MQB
  SG_ MO_MAX_Wunschdrehzahl : 32|9@1+ (25,0) [0|12750] "Unit_MinutInver" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
  SG_ MO_Charisma_FahrPr : 41|4@1+ (1,0) [0|15] "" Gateway_MQB
  SG_ MO_Charisma_Status : 45|2@1+ (1,0) [0|3] "" Gateway_MQB
+ SG_ MO_Prio_MAX_Wunschdrehzahl : 12|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
+ SG_ MO_Prio_MIN_Wunschdrehzahl : 13|1@1+ (1,0) [0|1] "" Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB
 
 BO_ 1648 Motor_18: 8 Motor_Diesel_MQB
  SG_ MO_Hybrid_StartStopp_LED : 43|2@1+ (1,0) [0|3] "" Gateway_MQB
@@ -1176,14 +1176,14 @@ BO_ 159 LH_EPS_03: 8 XXX
  SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 8|4@1+ (1,0) [0|15] "" XXX
  SG_ EPS_DSR_Status : 12|4@1+ (1,0) [0|15] "" XXX
- SG_ EPS_Berechneter_LW : 16|12@1+ (0.15,0) [0|613.95] "Unit_DegreOfArc" XXX
  SG_ EPS_BLW_QBit : 30|1@1+ (1,0) [0|1] "" XXX
- SG_ EPS_VZ_BLW : 31|1@1+ (1,0) [0|1] "" XXX
  SG_ EPS_HCA_Status : 32|4@1+ (1,0) [0|15] "" XXX
  SG_ EPS_Lenkmoment : 40|10@1+ (1,0) [0|8] "Unit_centiNewtoMeter" XXX
  SG_ EPS_Lenkmoment_QBit : 54|1@1+ (1,0) [0|1] "" XXX
  SG_ EPS_VZ_Lenkmoment : 55|1@1+ (1,0) [0|1] "" XXX
  SG_ EPS_Lenkungstyp : 60|4@1+ (1,0) [0|15] "" XXX
+ SG_ EPS_VZ_BLW : 31|1@1+ (1,0) [0|1] "" XXX
+ SG_ EPS_Berechneter_LW : 16|12@1+ (0.15,0) [0|613.95] "Unit_DegreOfArc" XXX
 
 BO_ 286 VehicleSpeed: 8 XXX
  SG_ VehicleSpeed_CRC : 0|8@1+ (1,0) [0|255] "" XXX
@@ -1233,18 +1233,17 @@ BO_ 780 ACC_02: 8 XXX
 BO_ 302 ACC_07: 8 XXX
  SG_ ACC_07_BZ : 8|4@1+ (1,0) [0|15] "" XXX
  SG_ ACC_07_CRC : 0|8@1+ (1,0) [0|255] "" XXX
- SG_ ACC_Sollbeschleunigung_01 : 53|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
- SG_ ACC_Engaged : 27|1@1+ (1,0) [0|1] "" XXX
- SG_ ACC_Start_Request : 30|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_Starting : 31|1@0+ (1,0) [0|1] "" XXX
- SG_ XXX_Maybe_Time_To_Collision : 32|8@1+ (1,-153) [0|255] "" XXX
- SG_ ACC_Requesting_ESP_Hold : 29|1@0+ (1,0) [0|1] "" XXX
- SG_ XXX_Not_Standstill : 13|1@1+ (1,0) [0|1] "" XXX
  SG_ XXX_Always_1 : 14|1@1+ (1,0) [0|1] "" XXX
- SG_ ACC_Standstill_Requested : 28|1@1+ (1,0) [0|1] "" XXX
  SG_ ACC_Inverted_Requesting_ESP_Hold : 15|1@1+ (1,0) [0|1] "" XXX
- SG_ ACC_Holding : 12|1@1+ (1,0) [0|1] "" XXX
- SG_ XXX_I_Have_No_Real_Idea : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ ACC_Hold_Status : 12|2@1+ (1,0) [0|1] "" XXX
+ SG_ XXX_I_Have_No_Real_Idea : 16|8@1+ (1,0) [0|255] "" XXX
+ SG_ ACC_Engaged : 27|1@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anhaltevorgang : 29|1@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anhalten : 28|1@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anfahren : 31|0@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Start_Request : 30|1@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Sollbeschleunigung_01 : 53|11@1+ (-1.995,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
+ SG_ XXX_Maybe_Time_To_Collision : 32|8@1+ (1,-153) [0|255] "" XXX
 
 BO_ 264 Fahrwerk_01: 8 XXX
  SG_ Fahrwerk_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
@@ -1359,21 +1358,26 @@ CM_ SG_ 134 LWI_Lenkradwinkel "Steering angle WITH variable ratio effect include
 CM_ SG_ 294 Assist_Torque "Heading control input, torque";
 CM_ SG_ 294 Assist_VZ "Heading control input, direction (sign)";
 CM_ SG_ 294 HCA_Available "Must be 1 for steering rack to accept HCA commands";
-CM_ SG_ 159 EPS_Berechneter_LW "Raw steering angle, degree
-CM_ SG_ 919 LDW_DLC "Probable DLC (distance to line crossing";
-CM_ SG_ 159 EPS_VZ_BLW "Raw steering angle, direction"
-CM_ SG_ 173 COUNTERXX "Message not renamed to COUNTER because J533 rate-limiting makes it look like messages are being lo";
 CM_ SG_ 159 EPS_HCA_Status "Status of Heading Control Assist feature"
 CM_ SG_ 159 EPS_Lenkmoment "Steering input by driver, torq";
 CM_ SG_ 159 EPS_Lenkmoment "Steering input by driver, torque
 CM_ SG_ 159 EPS_VZ_Lenkmoment "Steering input by driver, directi";
 CM_ SG_ 159 EPS_VZ_Lenkmoment "Steering input by driver, direction
 CM_ SG_ 159 EPS_Berechneter_LW "Raw steering angle, degre";
+CM_ SG_ 159 EPS_VZ_BLW "Raw steering angle, direction"
+CM_ SG_ 173 COUNTERXX "Message not renamed to COUNTER because J533 rate-limiting makes it look like messages are being lo";
+CM_ SG_ 159 EPS_Berechneter_LW "Raw steering angle, degree
+CM_ SG_ 919 LDW_DLC "Probable DLC (distance to line crossing";
 CM_ SG_ 919 LDW_DLC "Probable DLC (distance to line crossing)
 CM_ SG_ 919 LDW_TLC "Probable TLC (time to line crossing";
 CM_ SG_ 919 LDW_TLC "Probable TLC (time to line crossing)
 CM_ SG_ 870 Hazard_Switch "Four-way flashers activ";
-CM_ SG_ 302 ACC_Sollbeschleunigung_01 "Apparent duplicate of ACC_06.ACC_Sollbeschleunigung_02";
+CM_ SG_ 302 XXX_I_Have_No_Real_Idea "Weird format but changes with some other bits, maybe a data-level checksum?";
+CM_ SG_ 302 ACC_Engaged "ACC engaged and regulating speed";
+CM_ SG_ 302 ACC_Anhaltevorgang "Triggers/requests ESP standstill, reflected in ESP_Anhaltevorgang_ACC_aktiv";
+CM_ SG_ 302 ACC_Anhalten "Halt, mirrors ACC_06.Anhalten";
+CM_ SG_ 302 ACC_Anfahren "Start up, mirrors ACC_06.ACC_Anfahren";
+CM_ SG_ 302 ACC_Sollbeschleunigung_01 "Requested acceleration, mirrors ACC_06.ACC_Sollbeschleunigung_02";
 CM_ SG_ 870 Hazard_Switch "Four-way flashers active
 CM_ SG_ 870 Comfort_Signal_Left "Comfort turn signal active, lef";
 CM_ SG_ 870 Comfort_Signal_Left "Comfort turn signal active, left
