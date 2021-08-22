@@ -1234,16 +1234,16 @@ BO_ 302 ACC_07: 8 XXX
  SG_ ACC_07_BZ : 8|4@1+ (1,0) [0|15] "" XXX
  SG_ ACC_07_CRC : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ XXX_Always_1 : 14|1@1+ (1,0) [0|1] "" XXX
- SG_ ACC_Inverted_Requesting_ESP_Hold : 15|1@1+ (1,0) [0|1] "" XXX
- SG_ ACC_Hold_Status : 12|2@1+ (1,0) [0|1] "" XXX
  SG_ XXX_I_Have_No_Real_Idea : 16|8@1+ (1,0) [0|255] "" XXX
  SG_ ACC_Engaged : 27|1@1+ (1,0) [0|1] "Boolean" XXX
- SG_ ACC_Anhaltevorgang : 29|1@1+ (1,0) [0|1] "Boolean" XXX
- SG_ ACC_Anhalten : 28|1@1+ (1,0) [0|1] "Boolean" XXX
- SG_ ACC_Anfahren : 31|0@1+ (1,0) [0|1] "Boolean" XXX
- SG_ ACC_Start_Request : 30|1@1+ (1,0) [0|1] "Boolean" XXX
  SG_ ACC_Sollbeschleunigung_01 : 53|11@1+ (-1.995,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
  SG_ XXX_Maybe_Time_To_Collision : 32|8@1+ (1,-153) [0|255] "" XXX
+ SG_ XXX_Maybe_Engine_Stop_Release : 15|1@1+ (1,0) [0|1] "" XXX
+ SG_ XXX_Maybe_Engine_Start_Request : 12|2@1+ (1,0) [0|1] "" XXX
+ SG_ ACC_Anfahren : 31|0@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anhaltevorgang : 29|1@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anfahrvorgang : 30|1@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anhalten : 28|1@1+ (1,0) [0|1] "Boolean" XXX
 
 BO_ 264 Fahrwerk_01: 8 XXX
  SG_ Fahrwerk_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
@@ -1374,10 +1374,11 @@ CM_ SG_ 919 LDW_TLC "Probable TLC (time to line crossing)
 CM_ SG_ 870 Hazard_Switch "Four-way flashers activ";
 CM_ SG_ 302 XXX_I_Have_No_Real_Idea "Weird format but changes with some other bits, maybe a data-level checksum?";
 CM_ SG_ 302 ACC_Engaged "ACC engaged and regulating speed";
-CM_ SG_ 302 ACC_Anhaltevorgang "Triggers/requests ESP standstill, reflected in ESP_Anhaltevorgang_ACC_aktiv";
-CM_ SG_ 302 ACC_Anhalten "Halt, mirrors ACC_06.Anhalten";
-CM_ SG_ 302 ACC_Anfahren "Start up, mirrors ACC_06.ACC_Anfahren";
 CM_ SG_ 302 ACC_Sollbeschleunigung_01 "Requested acceleration, mirrors ACC_06.ACC_Sollbeschleunigung_02";
+CM_ SG_ 302 ACC_Anfahren "Start up, mirrors ACC_06.Anfahren";
+CM_ SG_ 302 ACC_Anhaltevorgang "Triggers/requests ESP standstill, reflected in ESP_Anhaltevorgang_ACC_aktiv";
+CM_ SG_ 302 ACC_Anfahrvorgang "Releases ESP hold";
+CM_ SG_ 302 ACC_Anhalten "Halt, mirrors ACC_06.Anhalten";
 CM_ SG_ 870 Hazard_Switch "Four-way flashers active
 CM_ SG_ 870 Comfort_Signal_Left "Comfort turn signal active, lef";
 CM_ SG_ 870 Comfort_Signal_Left "Comfort turn signal active, left
