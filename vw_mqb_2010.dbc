@@ -1235,11 +1235,16 @@ BO_ 302 ACC_07: 8 XXX
  SG_ ACC_07_CRC : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ ACC_Sollbeschleunigung_01 : 53|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
  SG_ ACC_Engaged : 27|1@1+ (1,0) [0|1] "" XXX
- SG_ ACC_Standstill : 28|1@1+ (1,0) [0|1] "" XXX
  SG_ ACC_Start_Request : 30|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_Hold_Request : 29|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_Starting : 31|1@0+ (1,0) [0|1] "" XXX
- SG_ XXX_Probably_Time_To_Collision : 32|8@1+ (1,-153) [0|255] "" XXX
+ SG_ XXX_Maybe_Time_To_Collision : 32|8@1+ (1,-153) [0|255] "" XXX
+ SG_ ACC_Requesting_ESP_Hold : 29|1@0+ (1,0) [0|1] "" XXX
+ SG_ XXX_Not_Standstill : 13|1@1+ (1,0) [0|1] "" XXX
+ SG_ XXX_Always_1 : 14|1@1+ (1,0) [0|1] "" XXX
+ SG_ ACC_Standstill_Requested : 28|1@1+ (1,0) [0|1] "" XXX
+ SG_ ACC_Inverted_Requesting_ESP_Hold : 15|1@1+ (1,0) [0|1] "" XXX
+ SG_ ACC_Holding : 12|1@1+ (1,0) [0|1] "" XXX
+ SG_ XXX_I_Have_No_Real_Idea : 23|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 264 Fahrwerk_01: 8 XXX
  SG_ Fahrwerk_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
