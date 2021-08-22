@@ -1253,8 +1253,8 @@ BO_ 780 ACC_02: 8 XXX
  SG_ ACC_Status_Anzeige : 61|3@1+ (1.0,0.0) [0.0|7] ""  XXX
 
 BO_ 302 ACC_07: 8 XXX
- SG_ ACC_07_BZ : 8|4@1+ (1,0) [0|15] "" XXX
- SG_ ACC_07_CRC : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ COUNTER : 8|4@1+ (1,0) [0|15] "" XXX
  SG_ XXX_Maybe_Engine_Start_Request : 12|2@1+ (1,0) [0|1] "" XXX
  SG_ XXX_Always_1 : 14|1@1+ (1,0) [0|1] "" XXX
  SG_ XXX_Maybe_Engine_Stop_Release : 15|1@1+ (1,0) [0|1] "" XXX
