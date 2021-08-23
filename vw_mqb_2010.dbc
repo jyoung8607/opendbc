@@ -1236,14 +1236,14 @@ BO_ 302 ACC_07: 8 XXX
  SG_ XXX_Always_1 : 14|1@1+ (1,0) [0|1] "" XXX
  SG_ XXX_I_Have_No_Real_Idea : 16|8@1+ (1,0) [0|255] "" XXX
  SG_ ACC_Engaged : 27|1@1+ (1,0) [0|1] "Boolean" XXX
- SG_ ACC_Sollbeschleunigung_01 : 53|11@1+ (-1.995,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
  SG_ XXX_Maybe_Time_To_Collision : 32|8@1+ (1,-153) [0|255] "" XXX
  SG_ XXX_Maybe_Engine_Stop_Release : 15|1@1+ (1,0) [0|1] "" XXX
  SG_ XXX_Maybe_Engine_Start_Request : 12|2@1+ (1,0) [0|1] "" XXX
  SG_ ACC_Anfahren : 31|0@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anhalten : 28|1@1+ (1,0) [0|1] "Boolean" XXX
  SG_ ACC_Anhaltevorgang : 29|1@1+ (1,0) [0|1] "Boolean" XXX
  SG_ ACC_Anfahrvorgang : 30|1@1+ (1,0) [0|1] "Boolean" XXX
- SG_ ACC_Anhalten : 28|1@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Sollbeschleunigung_01 : 53|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
 
 BO_ 264 Fahrwerk_01: 8 XXX
  SG_ Fahrwerk_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
@@ -1351,52 +1351,64 @@ BO_ 391 EV_Gearshift: 8 XXX
 
 
 
-CM_ SG_ 173 COUNTERXX "Message not renamed to COUNTER because J533 rate-limiting makes it look like messages are being los
-CM_ SG_ 159 EPS_HCA_Status "Status of Heading Control Assist feature";
-CM_ SG_ 960 ZAS_Kl_15 "Indicates ignition on";
-CM_ SG_ 134 LWI_Lenkradwinkel "Steering angle WITH variable ratio effect included";
-CM_ SG_ 294 Assist_Torque "Heading control input, torque";
-CM_ SG_ 294 Assist_VZ "Heading control input, direction (sign)";
-CM_ SG_ 294 HCA_Available "Must be 1 for steering rack to accept HCA commands";
-CM_ SG_ 159 EPS_HCA_Status "Status of Heading Control Assist feature"
-CM_ SG_ 159 EPS_Lenkmoment "Steering input by driver, torq";
-CM_ SG_ 159 EPS_Lenkmoment "Steering input by driver, torque
-CM_ SG_ 159 EPS_VZ_Lenkmoment "Steering input by driver, directi";
-CM_ SG_ 159 EPS_VZ_Lenkmoment "Steering input by driver, direction
+CM_ SG_ 173 COUNTERXX "Message not renamed to COUNTER because J533 rate-limiting makes it look like messages are being lo
 CM_ SG_ 159 EPS_Berechneter_LW "Raw steering angle, degre";
+CM_ SG_ 960 ZAS_Kl_15 "Indicates ignition on
+CM_ SG_ 134 LWI_Lenkradwinkel "Steering angle WITH variable ratio effect include";
+CM_ SG_ 134 LWI_Lenkradwinkel "Steering angle WITH variable ratio effect included
+CM_ SG_ 294 Assist_Torque "Heading control input, torqu";
+CM_ SG_ 294 Assist_Torque "Heading control input, torque
+CM_ SG_ 294 Assist_VZ "Heading control input, direction (sign";
+CM_ SG_ 294 Assist_VZ "Heading control input, direction (sign)
+CM_ SG_ 294 HCA_Available "Must be 1 for steering rack to accept HCA command";
+CM_ SG_ 294 HCA_Available "Must be 1 for steering rack to accept HCA commands
+CM_ SG_ 159 EPS_HCA_Status "Status of Heading Control Assist feature";
+CM_ SG_ 159 EPS_HCA_Status "Status of Heading Control Assist feature"
+CM_ SG_ 159 EPS_Lenkmoment "Steering input by driver, tor";
+CM_ SG_ 159 EPS_Lenkmoment "Steering input by driver, torque
+CM_ SG_ 159 EPS_VZ_Lenkmoment "Steering input by driver, direct";
+CM_ SG_ 159 EPS_VZ_Lenkmoment "Steering input by driver, direction
+CM_ SG_ 159 EPS_Berechneter_LW "Raw steering angle, degr";
 CM_ SG_ 159 EPS_VZ_BLW "Raw steering angle, direction"
-CM_ SG_ 173 COUNTERXX "Message not renamed to COUNTER because J533 rate-limiting makes it look like messages are being lo";
+CM_ SG_ 173 COUNTERXX "Message not renamed to COUNTER because J533 rate-limiting makes it look like messages are being l";
 CM_ SG_ 159 EPS_Berechneter_LW "Raw steering angle, degree
-CM_ SG_ 919 LDW_DLC "Probable DLC (distance to line crossing";
+CM_ SG_ 919 LDW_DLC "Probable DLC (distance to line crossin";
 CM_ SG_ 919 LDW_DLC "Probable DLC (distance to line crossing)
-CM_ SG_ 919 LDW_TLC "Probable TLC (time to line crossing";
+CM_ SG_ 919 LDW_TLC "Probable TLC (time to line crossin";
 CM_ SG_ 919 LDW_TLC "Probable TLC (time to line crossing)
+CM_ SG_ 870 Hazard_Switch "Four-way flashers acti";
+CM_ SG_ 302 XXX_I_Have_No_Real_Idea "Weird format but changes with some other bits, maybe a data-level checksum?
+CM_ SG_ 302 ACC_Engaged "ACC engaged and regulating spee";
+CM_ SG_ 302 ACC_Engaged "ACC engaged and regulating speed
+CM_ SG_ 302 ACC_Sollbeschleunigung_01 "Requested acceleration, mirrors ACC_06.ACC_Sollbeschleunigung_0";
+CM_ SG_ 302 ACC_Anfahren "Start up, mirrors ACC_06.Anfahren
+CM_ SG_ 302 ACC_Anhalten "Halt, mirrors ACC_06.Anhalte";
+CM_ SG_ 302 ACC_Anhalten "Halt, mirrors ACC_06.Anhalten
+CM_ SG_ 302 ACC_Anhaltevorgang "Stopping process, triggers/requests ESP standstill, reflected in ESP_Anhaltevorgang_ACC_akti";
+CM_ SG_ 302 ACC_Anhaltevorgang "Stopping process, triggers/requests ESP standstill, reflected in ESP_Anhaltevorgang_ACC_aktiv
+CM_ SG_ 302 ACC_Anfahrvorgang "Starting process, releases ESP hol";
+CM_ SG_ 302 ACC_Anfahrvorgang "Starting process, releases ESP hold
 CM_ SG_ 870 Hazard_Switch "Four-way flashers activ";
-CM_ SG_ 302 XXX_I_Have_No_Real_Idea "Weird format but changes with some other bits, maybe a data-level checksum?";
-CM_ SG_ 302 ACC_Engaged "ACC engaged and regulating speed";
-CM_ SG_ 302 ACC_Sollbeschleunigung_01 "Requested acceleration, mirrors ACC_06.ACC_Sollbeschleunigung_02";
-CM_ SG_ 302 ACC_Anfahren "Start up, mirrors ACC_06.Anfahren";
-CM_ SG_ 302 ACC_Anhaltevorgang "Triggers/requests ESP standstill, reflected in ESP_Anhaltevorgang_ACC_aktiv";
-CM_ SG_ 302 ACC_Anfahrvorgang "Releases ESP hold";
-CM_ SG_ 302 ACC_Anhalten "Halt, mirrors ACC_06.Anhalten";
+CM_ SG_ 302 ACC_Sollbeschleunigung_01 "Requested acceleration, mirrors ACC_06.ACC_Sollbeschleunigung_02
+CM_ SG_ 302 ACC_Anfahren "Start up, mirrors ACC_06.Anfahre";
 CM_ SG_ 870 Hazard_Switch "Four-way flashers active
-CM_ SG_ 870 Comfort_Signal_Left "Comfort turn signal active, lef";
+CM_ SG_ 870 Comfort_Signal_Left "Comfort turn signal active, le";
 CM_ SG_ 870 Comfort_Signal_Left "Comfort turn signal active, left
-CM_ SG_ 870 Comfort_Signal_Right "Comfort turn signal active, righ";
+CM_ SG_ 870 Comfort_Signal_Right "Comfort turn signal active, rig";
 CM_ SG_ 870 Comfort_Signal_Right "Comfort turn signal active, right
-CM_ SG_ 870 Left_Turn_Exterior_Bulb_1 "Probably fron";
+CM_ SG_ 870 Left_Turn_Exterior_Bulb_1 "Probably fro";
 CM_ SG_ 870 Left_Turn_Exterior_Bulb_1 "Probably front
-CM_ SG_ 870 Right_Turn_Exterior_Bulb_1 "Probably fron";
+CM_ SG_ 870 Right_Turn_Exterior_Bulb_1 "Probably fro";
 CM_ SG_ 870 Right_Turn_Exterior_Bulb_1 "Probably front
-CM_ SG_ 870 Left_Turn_Exterior_Bulb_2 "Probably rea";
+CM_ SG_ 870 Left_Turn_Exterior_Bulb_2 "Probably re";
 CM_ SG_ 870 Left_Turn_Exterior_Bulb_2 "Probably rear
-CM_ SG_ 870 Right_Turn_Exterior_Bulb_2 "Probably rea";
+CM_ SG_ 870 Right_Turn_Exterior_Bulb_2 "Probably re";
 CM_ SG_ 870 Right_Turn_Exterior_Bulb_2 "Probably rear
-CM_ SG_ 870 Fast_Send_Rate_Active "CAN message send rat";
+CM_ SG_ 870 Fast_Send_Rate_Active "CAN message send ra";
 CM_ SG_ 870 Fast_Send_Rate_Active "CAN message send rate
-CM_ SG_ 391 GearPosition "Traditional PRND plus B-mode aggressive regen, B-mode mapped to Driv";
+CM_ SG_ 391 GearPosition "Traditional PRND plus B-mode aggressive regen, B-mode mapped to Dri";
 CM_ SG_ 391 GearPosition "Traditional PRND plus B-mode aggressive regen, B-mode mapped to Drive
-VAL_ 173 GE_Fahrstufe 5 "P" 6 "R" 7 "N" 8 "D" 9 "S" 10 "E" 14 "";
+VAL_ 173 GE_Fahrstufe 5 "P" 6 "R" 7 "N" 8 "D" 9 "S" 10 "E" 14 ";
 VAL_ 159 EPS_HCA_Status 0 "disabled" 1 "initializing" 2 "fault" 3 "ready" 4 "rejected" 5 "active" ;
 VAL_ 870 Fast_Send_Rate_Active 0 "1 Hz" 1 "50 Hz" ;
 VAL_ 391 GearPosition 2 "P" 3 "R" 4 "N" 5 "D" 6 "D" ;
