@@ -1243,7 +1243,7 @@ BO_ 302 ACC_07: 8 XXX
  SG_ ACC_Anhaltevorgang : 29|1@1+ (1,0) [0|1] "Boolean" XXX
  SG_ ACC_Anfahrvorgang : 30|1@1+ (1,0) [0|1] "Boolean" XXX
  SG_ ACC_Sollbeschleunigung_01 : 53|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
- SG_ ACC_Anfahren : 31|2@1+ (1,0) [0|1] "Boolean" XXX
+ SG_ ACC_Anfahren : 31|1@1+ (1,0) [0|1] "Boolean" XXX
 
 BO_ 264 Fahrwerk_01: 8 XXX
  SG_ Fahrwerk_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
