@@ -62,7 +62,7 @@ def process(in_fn, out_fn):
     counter_start_bit = None
     little_endian = False
   elif can_dbc.name.startswith(("stellantis_")):
-    checksum_type = "stellantis"
+    checksum_type = "chrysler"
     checksum_size = 8
     counter_size = 4
     checksum_start_bit = 63
