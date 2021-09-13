@@ -101,7 +101,7 @@ uint64_t CANPacker::pack(uint32_t address, const std::vector<SignalPackValue> &s
     } else if (sig.type == SignalType::SUBARU_CHECKSUM) {
       unsigned int chksm = subaru_checksum(address, ret, message_lookup[address].size);
       ret = set_value(ret, sig, chksm);
-    } else if (sig.type == SignalType::CHRYSLER_CHECKSUM || sig.type == SignalType::STELLANTIS_CHECKSUM) {
+    } else if (sig.type == SignalType::CHRYSLER_CHECKSUM) {
       unsigned int chksm = chrysler_checksum(address, ReverseBytes(ret), message_lookup[address].size);
       ret = set_value(ret, sig, chksm);
     } else {
