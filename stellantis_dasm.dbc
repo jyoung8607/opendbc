@@ -126,9 +126,9 @@ BO_ 464 ORM: 8 XXX
  SG_ DRIVER_SEATBELT_STATUS : 16|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 657 BCM: 8 XXX
- SG_ DOOR_OPEN_LF : 17|1@0+ (1,0) [0|1] "" XXX
- SG_ DOOR_OPEN_RF : 18|1@1+ (1,0) [0|3] "" XXX
- SG_ DOOR_OPEN_LR : 19|1@0+ (1,0) [0|1] "" XXX
+ SG_ DOOR_OPEN_FL : 17|1@0+ (1,0) [0|1] "" XXX
+ SG_ DOOR_OPEN_FR : 18|1@1+ (1,0) [0|3] "" XXX
+ SG_ DOOR_OPEN_RL : 19|1@0+ (1,0) [0|1] "" XXX
  SG_ DOOR_OPEN_RR : 20|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 792 SWCM: 8 XXX
