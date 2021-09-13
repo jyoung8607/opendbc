@@ -37,10 +37,10 @@ BU_: XXX
 
 
 BO_ 35 EPS_1: 8 XXX
- SG_ STEER_ANGLE : 7|16@0+ (0.5,-2048) [0|65535] "degs" XXX
  SG_ TORQUE_MOTOR : 23|16@0+ (1,-4096) [0|65535] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
+ SG_ STEER_ANGLE : 7|16@0+ (0.5,-2048) [0|65535] "degs" XXX
 
 BO_ 37 PCM_1: 8 XXX
  SG_ ENGINE_RPM : 7|16@0+ (1,0) [0|1] "" XXX
@@ -49,11 +49,12 @@ BO_ 37 PCM_1: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 49 EPS_2: 8 XXX
- SG_ STEER_RATE_DRIVER : 19|12@0+ (0.125,-256) [0|1] "degs/s" XXX
- SG_ TORQUE_DRIVER : 35|12@0+ (1,-1024) [-1024|1024] "" XXX
  SG_ EPS_STATUS : 39|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
+ SG_ XXX_OTHER_TORQUE_DRIVER : 35|12@0+ (1,0) [-1024|1024] "" XXX
+ SG_ TORQUE_DRIVER : 3|12@0- (1,1050) [0|255] "" XXX
+ SG_ TORQUE_EPS_TOTAL : 19|12@0+ (1,-2000) [0|1] "" XXX
 
 BO_ 53 PCM_2: 8 XXX
  SG_ ENG_TORQUE_REQ : 3|12@0+ (1,0) [0|7] "" XXX
@@ -137,7 +138,9 @@ BO_ 232 ACC_CAR_DETECTED: 8 XXX
 
 
 CM_ SG_ 35 STEER_ANGLE "540 deg total negative values indicate right turn, positive values indicate left turn";
-CM_ SG_ 49 STEER_RATE_DRIVER "seems right";
+CM_ SG_ 49 XXX_OTHER_TORQUE_DRIVER "Appears to max out at relatively low torque";
+CM_ SG_ 49 TORQUE_DRIVER "";
+CM_ SG_ 49 TORQUE_EPS_TOTAL "";
 CM_ SG_ 129 THROTTLE_POSITION "gas pressed when values > 0 ";
 CM_ SG_ 133 ACTUAL_GEAR "0xd = P, 0x1-8 = D (actual gear), 0xb = R or N?? TODO find R vs N";
 CM_ SG_ 153 ACC_GAS_CONTROL "1 = ACC is doing gas, 0 = human";
