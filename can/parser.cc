@@ -54,7 +54,7 @@ bool MessageState::parse(uint64_t sec, uint16_t ts_, uint8_t * dat) {
           INFO("0x%X CHECKSUM FAIL\n", address);
           return false;
         }
-      } else if (sig.type == SignalType::CHRYSLER_CHECKSUM) {
+      } else if (sig.type == SignalType::CHRYSLER_CHECKSUM || sig.type == SignalType::STELLANTIS_CHECKSUM) {
         if (chrysler_checksum(address, dat_le, size) != tmp) {
           INFO("0x%X CHECKSUM FAIL\n", address);
           return false;
