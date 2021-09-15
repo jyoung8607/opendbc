@@ -120,9 +120,9 @@ BO_ 221 CENTER_STACK: 8 XXX
  SG_ TRAC_OFF : 54|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 250 DASM_LKAS_HUD: 8 XXX
- SG_ UNKNOWN : 32|4@1+ (1,0) [0|15] "" XXX
  SG_ HIGH_BEAM_CONTROL : 47|1@0+ (1,0) [0|1] "" XXX
  SG_ LKAS_HUD_2 : 48|4@1+ (1,0) [0|15] "" XXX
+ SG_ UNKNOWN : 32|4@1+ (1,0) [0|15] "" XXX
  SG_ LKAS_HUD_1 : 11|4@0+ (1,0) [0|15] "" XXX
 
 BO_ 464 ORM: 8 XXX
@@ -180,8 +180,8 @@ CM_ SG_ 163 MAYBE_ACC_TARGET_SPEED "ACC set speed in kph, but with some noise?";
 CM_ SG_ 166 LKAS_COMMAND "SENT BY FORWARD CAMERA";
 CM_ SG_ 166 LKAS_CONTROL_BIT "appears to be the lkas takeover indicator";
 CM_ SG_ 173 SHIFTER_POSITION "1 = P, 4 = D, 2 = R, 3 = N";
-CM_ SG_ 250 UNKNOWN "always 7";
 CM_ SG_ 250 LKAS_HUD_2 "various states while driving with lane lines, to be documented";
+CM_ SG_ 250 UNKNOWN "always 7";
 CM_ SG_ 250 LKAS_HUD_1 "9 = LEFT CAUTION, 11 = VERY LEFT CAUTION 10 = RIGHT CAUTION, 14 = VERY RIGHT, 4 = NO LINES DETECTED, 3 = LINES DETECTED, SYSTEM ACTIVE";
 CM_ SG_ 464 DRIVER_SEATBELT_STATUS "1 unbuckled 0 buckled";
 CM_ SG_ 792 TURN_SIGNALS "RIGHT IS 2 LEFT IS 1";
