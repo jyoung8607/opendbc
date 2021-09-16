@@ -197,6 +197,14 @@ BO_ 127 ABS_5: 8 XXX
  SG_ WS_IMPULSE_RL : 23|8@0+ (1,0) [0|255] "" XXX
  SG_ WS_IMPULSE_RR : 31|8@0+ (1,0) [0|255] "" XXX
 
+BO_ 131 UNKNOWN_MSG_6: 8 XXX
+ SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
+ SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
+ SG_ CC_MAIN_SWITCH : 23|1@0+ (1,0) [0|255] "" XXX
+ SG_ CC_ENGAGED : 15|1@0+ (1,0) [0|255] "x" XXX
+ SG_ UNKNOWN_1 : 3|4@0+ (1,0) [0|7] "" XXX
+ SG_ UNKNOWN_SPEED : 47|8@0+ (1,0) [0|255] "" XXX
+
 
 
 
@@ -225,4 +233,5 @@ CM_ SG_ 43 ACCEL_LATERAL "verify this isn't crossed up with yaw rate";
 CM_ SG_ 47 UNKNOWN_SPEED_1 "scaling TBD";
 CM_ SG_ 47 UNKNOWN_LOAD "maybe brake manifold vacuum";
 CM_ SG_ 47 UNKNOWN_BRAKE "maybe brake pressure/torque?";
+CM_ SG_ 131 UNKNOWN_SPEED "scale TBD";
 VAL_ 173 SHIFTER_POSITION 4 "D" 3 "N" 2 "R" 1 "P" ;
