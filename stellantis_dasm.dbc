@@ -112,9 +112,9 @@ BO_ 177 ACC_BUTTONS: 3 XXX
  SG_ SET_PLUS : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ SET_MINUS : 3|1@0+ (1,0) [0|3] "" XXX
  SG_ RESUME : 4|1@0+ (1,0) [0|1] "" XXX
- SG_ CRUISE_CONTROL : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ COUNTER : 15|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ MAIN_SWITCH : 6|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 221 CENTER_STACK: 8 XXX
  SG_ TRAC_OFF : 54|1@0+ (1,0) [0|1] "" XXX
@@ -180,6 +180,7 @@ CM_ SG_ 163 MAYBE_ACC_TARGET_SPEED "ACC set speed in kph, but with some noise?";
 CM_ SG_ 166 LKAS_COMMAND "SENT BY FORWARD CAMERA";
 CM_ SG_ 166 LKAS_CONTROL_BIT "appears to be the lkas takeover indicator";
 CM_ SG_ 173 SHIFTER_POSITION "1 = P, 4 = D, 2 = R, 3 = N";
+CM_ SG_ 177 MAIN_SWITCH "instantaneous button state only";
 CM_ SG_ 250 LKAS_HUD_2 "various states while driving with lane lines, to be documented";
 CM_ SG_ 250 UNKNOWN "always 7";
 CM_ SG_ 250 LKAS_HUD_1 "9 = LEFT CAUTION, 11 = VERY LEFT CAUTION 10 = RIGHT CAUTION, 14 = VERY RIGHT, 4 = NO LINES DETECTED, 3 = LINES DETECTED, SYSTEM ACTIVE";
