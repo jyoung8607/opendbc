@@ -205,6 +205,24 @@ BO_ 131 UNKNOWN_MSG_6: 8 XXX
  SG_ UNKNOWN_1 : 3|4@0+ (1,0) [0|7] "" XXX
  SG_ UNKNOWN_SPEED : 47|8@0+ (1,0) [0|255] "" XXX
 
+BO_ 135 NEW_MSG_2: 8 XXX
+ SG_ NEW_SIGNAL_1 : 39|16@0+ (1,0) [0|65535] "" XXX
+
+BO_ 137 EPS_3: 8 XXX
+ SG_ STEER_ANGLE_RAW : 7|16@0+ (0.1,-3276.8) [-1024|1024] "deg" XXX
+ SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
+ SG_ UNKNOWN_1 : 39|16@0+ (0.1,-3276.8) [0|65535] "Y" XXX
+
+BO_ 141 NEW_MSG_3: 8 XXX
+
+BO_ 145 NEW_MSG_4: 8 XXX
+ SG_ NEW_SIGNAL_1 : 15|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 155 NEW_MSG_5: 8 XXX
+ SG_ NEW_SIGNAL_1 : 15|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 167 NEW_MSG_6: 8 XXX
+
 
 
 
@@ -234,4 +252,6 @@ CM_ SG_ 47 UNKNOWN_SPEED_1 "scaling TBD";
 CM_ SG_ 47 UNKNOWN_LOAD "maybe brake manifold vacuum";
 CM_ SG_ 47 UNKNOWN_BRAKE "maybe brake pressure/torque?";
 CM_ SG_ 131 UNKNOWN_SPEED "scale TBD";
+CM_ SG_ 137 STEER_ANGLE_RAW "looks like a less-processed version of EPS_1.STEER_ANGLE";
+CM_ SG_ 137 UNKNOWN_1 "maybe an angle-rate?";
 VAL_ 173 SHIFTER_POSITION 4 "D" 3 "N" 2 "R" 1 "P" ;
