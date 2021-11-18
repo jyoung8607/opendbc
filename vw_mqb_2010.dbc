@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: Airbag_MQB BAP_Tester_MQB BMS_MQB Datenlogger_MQB Gateway_MQB Getriebe_DQ_Hybrid_MQB Getriebe_DQ_MQB LEH_MQB Motor_Diesel_MQB Motor_Hybrid_MQB Motor_Otto_MQB SAK_MQB Waehlhebel_MQB Vector__XXX 9 l c i XXX
+BU_: Airbag_MQB BAP_Tester_MQB BMS_MQB Datenlogger_MQB Gateway_MQB Getriebe_DQ_Hybrid_MQB Getriebe_DQ_MQB LEH_MQB Motor_Diesel_MQB Motor_Hybrid_MQB Motor_Otto_MQB SAK_MQB Waehlhebel_MQB Vector__XXX l c i XXX
 
 
 BO_ 290 ACC_06: 8 Gateway_MQB
@@ -1370,12 +1370,28 @@ BO_ 391 EV_Gearshift: 8 XXX
  SG_ GearPosition : 16|4@1+ (1,0) [0|255] "" XXX
  SG_ RegenBrakingMode : 12|2@1+ (1,0) [0|3] "" XXX
 
+BO_ 385 VZE_01: 8 XXX
+ SG_ VZE_Anzeigemodus : 0|2@1+ (1.0,0.0) [0.0|3] ""  XXX
+ SG_ VZE_Hinweistext : 2|3@1+ (1,0) [1|7] ""  XXX
+ SG_ VZE_Statuszaehler_1 : 5|2@1+ (1.0,0.0) [0.0|3] ""  XXX
+ SG_ VZE_Statuszaehler_2 : 7|2@1+ (1.0,0.0) [0.0|3] ""  XXX
+ SG_ VZE_Statuszaehler_3 : 9|2@1+ (1.0,0.0) [0.0|3] ""  XXX
+ SG_ VZE_Verkehrszeichen_1 : 11|8@1+ (1,0) [1|255] ""  XXX
+ SG_ VZE_Verkehrszeichen_2 : 19|8@1+ (1,0) [1|255] ""  XXX
+ SG_ VZE_Verkehrszeichen_3 : 27|8@1+ (1,0) [1|255] ""  XXX
+ SG_ VZE_Warnung_Verkehrszeichen_1 : 35|1@1+ (1.0,0.0) [0.0|1] ""  XXX
+ SG_ VZE_Warnung_Verkehrszeichen_2 : 36|1@1+ (1.0,0.0) [0.0|1] ""  XXX
+ SG_ VZE_Warnung_Verkehrszeichen_3 : 37|1@1+ (1.0,0.0) [0.0|1] ""  XXX
+ SG_ VZE_Zusatzschild_1 : 38|4@1+ (1,0) [1|15] ""  XXX
+ SG_ VZE_Zusatzschild_2 : 42|4@1+ (1,0) [1|15] ""  XXX
+ SG_ VZE_Zusatzschild_3 : 46|4@1+ (1,0) [1|15] ""  XXX
+
 CM_ SG_ 134 LWI_Lenkradwinkel "Steering angle WITH variable ratio effect included";
-CM_ SG_ 159 EPS_HCA_Status "Status of Heading Control Assist feature"
+CM_ SG_ 159 EPS_HCA_Status "Status of Heading Control Assist feature";
 CM_ SG_ 159 EPS_Lenkmoment "Steering input by driver, torque";
 CM_ SG_ 159 EPS_VZ_Lenkmoment "Steering input by driver, direction";
 CM_ SG_ 159 EPS_Berechneter_LW "Raw steering angle, degrees";
-CM_ SG_ 159 EPS_VZ_BLW "Raw steering angle, direction"
+CM_ SG_ 159 EPS_VZ_BLW "Raw steering angle, direction";
 CM_ SG_ 173 COUNTERXX "Message not renamed to COUNTER because J533 rate-limiting makes it look like messages are being lost";
 CM_ SG_ 294 3 "May be zero when sent by older cameras";
 CM_ SG_ 294 7 "May be zero when sent by older cameras";
@@ -1413,8 +1429,51 @@ CM_ SG_ 780 Abstand "Following distance";
 CM_ SG_ 780 SetSpeed "ACC set speed";
 CM_ SG_ 391 GearPosition "Traditional PRND plus B-mode aggressive regen, B-mode mapped to Drive";
 CM_ SG_ 960 ZAS_Kl_15 "Indicates ignition on";
+CM_ SG_ 385 VZE_Anzeigemodus "Steuert die verschiedenen Möglichkeiten der Anzeige, vor allem die Aktivierung sowie die erweiterten Anzeigen im Kombi";
+CM_ SG_ 385 VZE_Hinweistext "Über Index wird ein Hinweistext beschrieben, der durch das Kombi dargestellte werden soll.
+
+Wertebereich lt. Hashtabelle";
+CM_ SG_ 385 VZE_Statuszaehler_1 "Steuerungssignal zur Steuerung des Distanzzählers von Verkehrszeichen 1";
+CM_ SG_ 385 VZE_Statuszaehler_2 "Steuerungssignal zur Steuerung des Distanzzählers von Verkehrszeichen 2";
+CM_ SG_ 385 VZE_Statuszaehler_3 "Steuerungssignal zur Steuerung des Distanzzählers von Verkehrszeichen 3";
+CM_ SG_ 385 VZE_Verkehrszeichen_1 "Das Signal spiegelt eines der Verkehrszeichen: Geschwindigkeitsgebot, Überholverbot, Aufhebungszeichen wider.
+
+Wertebereich lt. Hashtabelle";
+CM_ SG_ 385 VZE_Verkehrszeichen_2 "Das Signal spiegelt eines der Verkehrszeichen: Geschwindigkeitsgebot, Überholverbot, Aufhebungszeichen wider.
+
+Wertebereich lt. Hashtabelle";
+CM_ SG_ 385 VZE_Verkehrszeichen_3 "Das Signal spiegelt eines der Verkehrszeichen: Geschwindigkeitsgebot, Überholverbot, Aufhebungszeichen wider.
+
+Wertebereich lt. Hashtabelle";
+CM_ SG_ 385 VZE_Warnung_Verkehrszeichen_1 "Ist das Signal gesetzt, so ist für das Verkehrszeichen 1 eine Warnung auszugeben.";
+CM_ SG_ 385 VZE_Warnung_Verkehrszeichen_2 "Ist das Signal gesetzt, so ist für das Verkehrszeichen 2 eine Warnung auszugeben.";
+CM_ SG_ 385 VZE_Warnung_Verkehrszeichen_3 "Ist das Signal gesetzt, so ist für das Verkehrszeichen 3 eine Warnung auszugeben.";
+CM_ SG_ 385 VZE_Zusatzschild_1 "Zusatzsschild, das zu Verkehrszeichen 1 angezeigt werden soll.
+
+Wertebereich lt. Hashtabelle";
+CM_ SG_ 385 VZE_Zusatzschild_2 "Zusatzsschild, das zu Verkehrszeichen 2 angezeigt werden soll.
+
+Wertebereich lt. Hashtabelle";
+CM_ SG_ 385 VZE_Zusatzschild_3 "Zusatzsschild, das zu Verkehrszeichen 3 angezeigt werden soll.
+
+Wertebereich lt. Hashtabelle";
+
 VAL_ 159 EPS_HCA_Status 0 "disabled" 1 "initializing" 2 "fault" 3 "ready" 4 "rejected" 5 "active";
 VAL_ 173 GE_Fahrstufe 5 "P" 6 "R" 7 "N" 8 "D" 9 "S" 10 "E" 14 "T";
 VAL_ 391 GearPosition 2 "P" 3 "R" 4 "N" 5 "D" 6 "D";
 VAL_ 391 RegenBrakingMode 0 "default" 1 "B1" 2 "B2" 3 "B3";
 VAL_ 870 Fast_Send_Rate_Active 0 "1 Hz" 1 "50 Hz";
+VAL_ 385 VZE_Anzeigemodus 0 "Anzeige_fuer_VZ_inaktiv_Init" 1 "aktiv_erweiterte_Anzeige_aus" 2 "aktiv_erweiterte_Anzeige_ein" 3 "reserviert" ;
+VAL_ 385 VZE_Hinweistext 0 "kein_Hinweistext" ;
+VAL_ 385 VZE_Statuszaehler_1 0 "stoppe_Distanzzaehler_zeige_Zaehler_nicht_an_Initialwert_Fehlerwert" 1 "setze_Distanzzaehler_zurueck_und_zeige_Zaehler_nicht_an" 2 "starte_Distanzzaehler_und_zeige_Zaehler_an" 3 "starte_zurueckgesetzten_Distanzzaehler_und_zeige_Zaehler_an" ;
+VAL_ 385 VZE_Statuszaehler_2 0 "stoppe_Distanzzaehler_zeige_Zaehler_nicht_an_Initialwert_Fehlerwert" 1 "setze_Distanzzaehler_zurueck_und_zeige_Zaehler_nicht_an" 2 "starte_Distanzzaehler_und_zeige_Zaehler_an" 3 "starte_zurueckgesetzten_Distanzzaehler_und_zeige_Zaehler_an" ;
+VAL_ 385 VZE_Statuszaehler_3 0 "stoppe_Distanzzaehler_zeige_Zaehler_nicht_an_Initialwert_Fehlerwert" 1 "setze_Distanzzaehler_zurueck_und_zeige_Zaehler_nicht_an" 2 "starte_Distanzzaehler_und_zeige_Zaehler_an" 3 "starte_zurueckgesetzten_Distanzzaehler_und_zeige_Zaehler_an" ;
+VAL_ 385 VZE_Verkehrszeichen_1 0 "kein_Verkehrszeichen" ;
+VAL_ 385 VZE_Verkehrszeichen_2 0 "kein_Verkehrszeichen" ;
+VAL_ 385 VZE_Verkehrszeichen_3 0 "kein_Verkehrszeichen" ;
+VAL_ 385 VZE_Warnung_Verkehrszeichen_1 0 "keine_Warnung_Initialwert_Fehlerwert" 1 "Warnung" ;
+VAL_ 385 VZE_Warnung_Verkehrszeichen_2 0 "keine_Warnung_Initialwert_Fehlerwert" 1 "Warnung" ;
+VAL_ 385 VZE_Warnung_Verkehrszeichen_3 0 "keine_Warnung_Initialwert_Fehlerwert" 1 "Warnung" ;
+VAL_ 385 VZE_Zusatzschild_1 0 "keine_Zusatzschild_Initialwert_Fehlerwert" ;
+VAL_ 385 VZE_Zusatzschild_2 0 "keine_Zusatzschild_Initialwert_Fehlerwert" ;
+VAL_ 385 VZE_Zusatzschild_3 0 "keine_Zusatzschild_Initialwert_Fehlerwert" ;
