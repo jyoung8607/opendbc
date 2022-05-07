@@ -1185,7 +1185,7 @@ BO_ 294 HCA_01: 8 XXX
  SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] ""  XXX
  SG_ COUNTER : 8|4@1+ (1,0) [0|15] ""  XXX
  SG_ HCA_01_Vib_Freq : 12|4@1+ (1,15) [15|30] "Unit_Hertz"  XXX
- SG_ HCA_01_LM_Offset : 16|9@1+ (0.01,0) [0|5.11] "Unit_NewtoMeter"  XXX
+ SG_ HCA_01_LM_Offset : 16|9@1+ (1,0) [0|500.11] "Unit_CentiNewtoMeter"  XXX
  SG_ EA_ACC_Sollstatus : 25|2@1+ (1,0) [0|3] ""  XXX
  SG_ EA_Ruckprofil : 27|3@1+ (1,0) [0|7] ""  XXX
  SG_ HCA_01_Sendestatus : 30|1@1+ (1,0) [0|1] ""  XXX
