@@ -50,7 +50,7 @@ bool MessageState::parse(uint64_t sec, uint8_t * dat) {
           return false;
         }
       } else if (sig.type == SignalType::VOLKSWAGEN_PQ_CHECKSUM) {
-        if (volkswagen_pq_checksum(sig.offset, dat_le, size) != tmp) {
+        if (volkswagen_pq_checksum(sig.b1, dat_le, size) != tmp) {
           INFO("0x%X CHECKSUM FAIL\n", address);
           return false;
         }
