@@ -44,9 +44,14 @@ bool MessageState::parse(uint64_t sec, uint8_t * dat) {
           INFO("0x%X CHECKSUM FAIL\n", address);
           return false;
         }
-      } else if (sig.type == SignalType::VOLKSWAGEN_CHECKSUM) {
-        if (volkswagen_crc(address, dat_le, size) != tmp) {
+      } else if (sig.type == SignalType::VOLKSWAGEN_MQB_CHECKSUM) {
+        if (volkswagen_mqb_crc(address, dat_le, size) != tmp) {
           INFO("0x%X CRC FAIL\n", address);
+          return false;
+        }
+      } else if (sig.type == SignalType::VOLKSWAGEN_PQ_CHECKSUM) {
+        if (volkswagen_pq_checksum(sig.offset, dat_le, size) != tmp) {
+          INFO("0x%X CHECKSUM FAIL\n", address);
           return false;
         }
       } else if (sig.type == SignalType::SUBARU_CHECKSUM) {
@@ -71,7 +76,7 @@ bool MessageState::parse(uint64_t sec, uint8_t * dat) {
         if (!update_counter_generic(tmp, sig.b2)) {
           return false;
         }
-      } else if (sig.type == SignalType::VOLKSWAGEN_COUNTER) {
+      } else if (sig.type == SignalType::VOLKSWAGEN_MQB_COUNTER || sig.type == SignalType::VOLKSWAGEN_PQ_COUNTER) {
           if (!update_counter_generic(tmp, sig.b2)) {
           return false;
         }

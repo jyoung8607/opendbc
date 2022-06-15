@@ -94,7 +94,7 @@ void init_crc_lookup_tables() {
   gen_crc_lookup_table(0x2F, crc8_lut_8h2f);    // CRC-8 8H2F/AUTOSAR for Volkswagen
 }
 
-unsigned int volkswagen_crc(unsigned int address, uint64_t d, int l) {
+unsigned int volkswagen_mqb_crc(unsigned int address, uint64_t d, int l) {
   // Volkswagen uses standard CRC8 8H2F/AUTOSAR, but they compute it with
   // a magic variable padding byte tacked onto the end of the payload.
   // https://www.autosar.org/fileadmin/user_upload/standards/classic/4-3/AUTOSAR_SWS_CRCLibrary.pdf
@@ -173,6 +173,22 @@ unsigned int volkswagen_crc(unsigned int address, uint64_t d, int l) {
   crc = crc8_lut_8h2f[crc];
 
   return crc ^ 0xFF; // Return after standard final XOR for CRC8 8H2F/AUTOSAR
+}
+
+unsigned int volkswagen_pq_checksum(int checksum_start_bit, uint64_t d, int l) {
+  uint8_t checksum = 0;
+  int checksum_byte = checksum_start_bit / 8;
+
+  // Simple XOR over the payload, except for the byte where the checksum lives.
+  for (int i = 0; i < l; i++) {
+    if (i == checksum_byte) {
+      continue;
+    } else {
+      checksum ^= (d >> (i*8)) & 0xFF;
+    }
+  }
+
+  return checksum;
 }
 
 unsigned int pedal_checksum(uint64_t d, int l) {

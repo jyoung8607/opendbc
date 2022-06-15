@@ -40,12 +40,19 @@ def process(in_fn, out_fn):
     checksum_start_bit = 7
     counter_start_bit = None
     little_endian = False
-  elif can_dbc.name.startswith(("vw_", "volkswagen_", "audi_", "seat_", "skoda_")):
-    checksum_type = "volkswagen"
+  elif can_dbc.name.startswith(("vw_mqb_2010")):
+    checksum_type = "volkswagen_mqb"
     checksum_size = 8
     counter_size = 4
     checksum_start_bit = 0
     counter_start_bit = 0
+    little_endian = True
+  elif can_dbc.name.startswith(("vw_golf_mk4")):
+    checksum_type = "volkswagen_pq"
+    checksum_size = 8
+    counter_size = 4
+    checksum_start_bit = None
+    counter_start_bit = None
     little_endian = True
   elif can_dbc.name.startswith(("subaru_global_")):
     checksum_type = "subaru"
@@ -78,7 +85,7 @@ def process(in_fn, out_fn):
         if sig.name == "CHECKSUM":
           if sig.size != checksum_size:
             sys.exit("%s: CHECKSUM is not %d bits long" % (dbc_msg_name, checksum_size))
-          if sig.start_bit % 8 != checksum_start_bit:
+          if checksum_start_bit is not None and sig.start_bit % 8 != checksum_start_bit:
             sys.exit("%s: CHECKSUM starts at wrong bit" % dbc_msg_name)
           if little_endian != sig.is_little_endian:
             sys.exit("%s: CHECKSUM has wrong endianness" % dbc_msg_name)
