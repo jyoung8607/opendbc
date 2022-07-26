@@ -99,7 +99,7 @@ uint64_t CANPacker::pack(uint32_t address, const std::vector<SignalPackValue> &s
       unsigned int chksm = volkswagen_mqb_crc(address, ReverseBytes(ret), message_lookup[address].size);
       ret = set_value(ret, sig, chksm);
     } else if (sig.type == SignalType::VOLKSWAGEN_PQ_CHECKSUM) {
-      unsigned int chksm = volkswagen_pq_checksum(sig.b1, ret, message_lookup[address].size);
+      unsigned int chksm = volkswagen_pq_checksum(sig.b1, ReverseBytes(ret), message_lookup[address].size);
       ret = set_value(ret, sig, chksm);
     } else if (sig.type == SignalType::SUBARU_CHECKSUM) {
       unsigned int chksm = subaru_checksum(address, ret, message_lookup[address].size);

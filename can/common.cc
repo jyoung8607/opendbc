@@ -181,9 +181,7 @@ unsigned int volkswagen_pq_checksum(int checksum_start_bit, uint64_t d, int l) {
 
   // Simple XOR over the payload, except for the byte where the checksum lives.
   for (int i = 0; i < l; i++) {
-    if (i == checksum_byte) {
-      continue;
-    } else {
+    if (i != checksum_byte) {
       checksum ^= (d >> (i*8)) & 0xFF;
     }
   }
