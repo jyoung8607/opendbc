@@ -119,7 +119,7 @@ BO_ 304 ABS_3: 8 XXX
 
 BO_ 308 NEW_MSG_2: 8 XXX
 
-BO_ 144 MAYBE_ENGINE: 8 XXX
+BO_ 144 ECM_2: 8 XXX
  SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_4 : 8|12@1+ (1,0) [0|255] "" XXX
  SG_ MAYBE_RPM : 20|12@1+ (1,0) [0|15] "x" XXX
@@ -156,12 +156,22 @@ BO_ 560 TURN_SIGNALS: 8 XXX
  SG_ LEFT_TURN_BULB_1 : 16|1@1+ (1,0) [0|1] "" XXX
  SG_ RIGHT_TURN_BULB_1 : 17|1@1+ (1,0) [0|1] "" XXX
 
+BO_ 180 TRANS_1: 8 XXX
+ SG_ NEW_SIGNAL_A : 28|4@1+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_B : 32|4@1+ (1,0) [0|255] "" XXX
+ SG_ COUNTER : 63|4@0+ (1,0) [0|15] "" XXX
+ SG_ CHECKSUM : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ TC_UNLOCK : 36|1@1+ (1,0) [0|1] "" XXX
+ SG_ UNKNOWN : 56|1@1+ (1,0) [0|1] "" XXX
+
 
 
 
 CM_ SG_ 274 UNKNOWN_ACTIVE_STATE "Triggers changes from 8 to 9 in EPS_2.LKAS_STATUS";
 CM_ SG_ 560 RIGHT_TURN_SIGNALING "Includes 2.5 second convenience lane change interval";
 CM_ SG_ 560 LEFT_TURN_SIGNALING "Includes 2.5 second convenience lane change interval";
+CM_ SG_ 180 TC_UNLOCK "AT torque converter unlocked (guessed)";
+CM_ SG_ 180 UNKNOWN "May be a neutral or parking-pawl indicator";
 VAL_ 336 LKAS_STATUS 1 "INITIALIZING" 5 "READY" 8 "ACTIVE_1" 9 "ACTIVE_2" 13 "FAULT" ;
 VAL_ 304 DIRECTION_2 0 "STANDSTILL" 1 "FORWARD" 2 "REVERSE" ;
 VAL_ 304 DIRECTION_1 0 "STANDSTILL" 1 "FORWARD" 2 "REVERSE" ;
