@@ -143,10 +143,22 @@ BO_ 590 DOOR_RL: 8 XXX
 BO_ 591 DOOR_RR: 8 XXX
  SG_ OPEN : 2|1@1+ (1,0) [0|1] "" XXX
 
+BO_ 560 TURN_SIGNALS: 8 XXX
+ SG_ RIGHT_TURN_SIGNALING : 45|1@1+ (1,0) [0|1] "" XXX
+ SG_ LEFT_TURN_SIGNALING : 44|1@1+ (1,0) [0|1] "" XXX
+ SG_ RIGHT_TURN_BULB_3 : 21|1@1+ (1,0) [0|1] "" XXX
+ SG_ LEFT_TURN_BULB_3 : 20|1@1+ (1,0) [0|1] "" XXX
+ SG_ RIGHT_TURN_BULB_2 : 19|1@1+ (1,0) [0|1] "" XXX
+ SG_ LEFT_TURN_BULB_2 : 18|1@1+ (1,0) [0|1] "" XXX
+ SG_ LEFT_TURN_BULB_1 : 16|1@1+ (1,0) [0|1] "" XXX
+ SG_ RIGHT_TURN_BULB_1 : 17|1@1+ (1,0) [0|1] "" XXX
+
 
 
 
 CM_ SG_ 274 UNKNOWN_ACTIVE_STATE "Triggers changes from 8 to 9 in EPS_2.LKAS_STATUS";
+CM_ SG_ 560 RIGHT_TURN_SIGNALING "Includes 2.5 second convenience lane change interval";
+CM_ SG_ 560 LEFT_TURN_SIGNALING "Includes 2.5 second convenience lane change interval";
 VAL_ 336 LKAS_STATUS 1 "INITIALIZING" 5 "READY" 8 "ACTIVE_1" 9 "ACTIVE_2" 13 "FAULT" ;
 VAL_ 586 OPEN 0 "CLOSED" 1 "OPEN" ;
 VAL_ 588 OPEN 0 "CLOSED" 1 "OPEN" ;
