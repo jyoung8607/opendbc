@@ -44,8 +44,13 @@ bool MessageState::parse(uint64_t sec, uint8_t * dat) {
           INFO("0x%X CHECKSUM FAIL\n", address);
           return false;
         }
-      } else if (sig.type == SignalType::VOLKSWAGEN_CHECKSUM) {
+      } else if (sig.type == SignalType::VOLKSWAGEN_MQB_CHECKSUM) {
         if (volkswagen_crc(address, dat_le, size) != tmp) {
+          INFO("0x%X CRC FAIL\n", address);
+          return false;
+        }
+      } else if (sig.type == SignalType::XOR_CHECKSUM) {
+        if (xor_checksum(address, dat_le, size) != tmp) {
           INFO("0x%X CRC FAIL\n", address);
           return false;
         }

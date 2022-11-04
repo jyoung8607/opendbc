@@ -22,7 +22,7 @@ DBCSignal = namedtuple(
 class dbc():
   def __init__(self, fn):
     self.name, _ = os.path.splitext(os.path.basename(fn))
-    with open(fn, encoding="ascii") as f:
+    with open(fn, encoding="utf8") as f:
       self.txt = f.readlines()
     self._warned_addresses = set()
 
