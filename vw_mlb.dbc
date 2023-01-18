@@ -33,28 +33,86 @@ NS_ :
 
 BS_:
 
-BU_: XXX
+BU_: Airbag_D4 EPB_D4 ESP_D4 Gateway_D4C7 Getriebe_AL551_951_D4_C7 Getriebe_DL501_C7 Getriebe_VL381_C7 LWS_D4 Motor_EDC17_D4 Motor_ME17_BY Motor_MED17_SIMOS8_D4 Motor_Slave_D4 QSP_D4 SAK_C7 SCR_C7 SCU_D4
 
+
+BO_ 64 Airbag_01: 8 Airbag_D4
+ SG_ Airbag_01_CHK : 0|8@1+ (1,0) [0|255] ""  Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ Airbag_01_BZ : 8|4@1+ (1,0) [0|15] ""  Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ AB_RGS_Anst : 12|4@1+ (1.0,0.0) [0.0|15] ""  Gateway_D4C7
+ SG_ AB_Front_Crash : 16|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Heck_Crash : 17|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_SF_Crash : 18|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_SB_Crash : 19|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Rollover_Crash : 20|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Crash_Int : 21|3@1+ (1.0,0.0) [0.0|7] ""  Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ AB_Lampe : 24|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Deaktiviert : 25|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_VB_deaktiviert : 26|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Systemfehler : 27|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Diagnose : 28|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Stellgliedtest : 29|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ AB_Erh_Auf_VB : 30|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtwarn_VF : 32|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Gurtwarn_VB : 33|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Anzeige_Fussg : 34|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Texte_AKS : 36|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_PAO_Leuchte_Anf : 38|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_MKB_gueltig : 39|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_MKB_Anforderung : 40|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_Versorgungsspannung : 41|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+ SG_ AB_KD_Fehler : 63|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
+
+BO_ 1312 Airbag_02: 8 Airbag_D4
+ SG_ AB_Belegung_VB : 26|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtschloss_FA : 40|2@1+ (1.0,0.0) [0.0|3] ""  EPB_D4,Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ AB_Gurtschloss_BF : 42|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtschloss_Reihe2_FA : 44|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtschloss_Reihe2_MI : 46|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtschloss_Reihe2_BF : 48|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtschloss_Reihe3_FA : 50|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtschloss_Reihe3_MI : 52|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Gurtschloss_Reihe3_BF : 54|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Sitzpos_Sens_FA : 56|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
+ SG_ AB_Sitzpos_Sens_BF : 58|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
 
 BO_ 269 ACC_05: 8 Gateway_D4C7
- SG_ ACC_05_CHK : 0|8@1+ (1,0) [0|255] ""  XXX
- SG_ ACC_05_BZ : 8|4@1+ (1,0) [0|15] ""  XXX
- SG_ ACC_Freigabe_Momentenanf : 12|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_Freigabe_Verzanf : 13|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_Getriebestellung_P : 14|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_limitierte_Anfahrdyn : 15|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_Momentenanforderung : 16|10@1+ (1,0) [0|1021] ""  XXX
- SG_ ACC_zul_Regelabw : 26|6@1+ (0.024,0) [0.000|1.512] "Unit_MeterPerSeconSquar"  XXX
- SG_ ACC_Verz_anf : 32|11@1+ (0.005,-7.22) [-7.220|3.015] "Unit_MeterPerSeconSquar"  XXX
- SG_ ACC_Loeseanforderung : 43|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_StartStopp_Info : 44|2@1+ (1.0,0.0) [0.0|3] ""  XXX
- SG_ ACC_Vorbefuellung_Bremsanlage : 47|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_ax_Getriebe : 48|9@1+ (0.024,-2.016) [-2.016|10.248] "Unit_MeterPerSeconSquar"  XXX
- SG_ ACC_Status_ACC : 57|3@1+ (1.0,0.0) [0.0|7] ""  XXX
- SG_ ACC_Betaetigung_EPB : 60|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_Beeinflussung_ESP : 61|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_Anhalten : 62|1@1+ (1.0,0.0) [0.0|1] ""  XXX
- SG_ ACC_KD_Fehler : 63|1@1+ (1.0,0.0) [0.0|1] ""  XXX
+ SG_ ACC_05_CHK : 0|8@1+ (1,0) [0|255] ""  EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_05_BZ : 8|4@1+ (1,0) [0|15] ""  EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_Freigabe_Momentenanf : 12|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_Freigabe_Verzanf : 13|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7
+ SG_ ACC_Getriebestellung_P : 14|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7
+ SG_ ACC_limitierte_Anfahrdyn : 15|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_Momentenanforderung : 16|10@1+ (1,0) [0|1021] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_zul_Regelabw : 26|6@1+ (0.024,0) [0.000|1.512] "Unit_MeterPerSeconSquar"  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7
+ SG_ ACC_Verz_anf : 32|11@1+ (0.005,-7.22) [-7.220|3.015] "Unit_MeterPerSeconSquar"  Vector__XXX
+ SG_ ACC_Loeseanforderung : 43|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ ACC_StartStopp_Info : 44|2@1+ (1.0,0.0) [0.0|3] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_Vorbefuellung_Bremsanlage : 47|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ ACC_ax_Getriebe : 48|9@1+ (0.024,-2.016) [-2.016|10.248] "Unit_MeterPerSeconSquar"  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7
+ SG_ ACC_Status_ACC : 57|3@1+ (1.0,0.0) [0.0|7] ""  EPB_D4,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_Betaetigung_EPB : 60|1@1+ (1.0,0.0) [0.0|1] ""  EPB_D4,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ACC_Beeinflussung_ESP : 61|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ ACC_Anhalten : 62|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ ACC_KD_Fehler : 63|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+
+BO_ 1714 Diagnose_01: 8 Gateway_D4C7
+ SG_ DGN_Verlernzaehler : 0|8@1+ (1,0) [0|254] ""  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,SAK_C7,SCR_C7,SCU_D4
+ SG_ KBI_Kilometerstand : 8|20@1+ (1,0) [0|1048573] "Unit_KiloMeter"  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SAK_C7,SCR_C7,SCU_D4
+ SG_ UH_Jahr : 28|7@1+ (1,2000) [2000|2127] "Unit_Year"  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SAK_C7,SCR_C7,SCU_D4
+ SG_ UH_Monat : 35|4@1+ (1,0) [1|12] "Unit_Month"  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SAK_C7,SCR_C7,SCU_D4
+ SG_ UH_Tag : 39|5@1+ (1,0) [1|31] "Unit_Day"  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SAK_C7,SCR_C7,SCU_D4
+ SG_ UH_Stunde : 44|5@1+ (1,0) [0|23] "Unit_Hours"  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SAK_C7,SCR_C7,SCU_D4
+ SG_ UH_Minute : 49|6@1+ (1,0) [0|59] "Unit_Minut"  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SAK_C7,SCR_C7,SCU_D4
+ SG_ UH_Sekunde : 55|6@1+ (1,0) [0|59] "Unit_Secon"  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SAK_C7,SCR_C7,SCU_D4
+ SG_ Kombi_02_alt : 62|1@1+ (1.0,0.0) [0.0|1] ""  Airbag_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,SCR_C7,SCU_D4
+ SG_ Uhrzeit_01_alt : 63|1@1+ (1.0,0.0) [0.0|1] ""  Airbag_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,SCR_C7,SCU_D4
+
+BO_ 1520 Dimmung_01: 5 Gateway_D4C7
+ SG_ DI_KL_58d : 0|8@1+ (1,0) [0|253] ""  Airbag_D4,Getriebe_AL551_951_D4_C7
+ SG_ DI_KL_58s : 8|7@1+ (1,0) [0|100] "Unit_PerCent"  Getriebe_AL551_951_D4_C7
+ SG_ DI_KL_58st : 16|7@1+ (1,0) [0|100] "Unit_PerCent"  Getriebe_AL551_951_D4_C7
+ SG_ DI_Lichtsensorwert : 24|16@1+ (1,0) [0|65535] ""  Airbag_D4,Getriebe_AL551_951_D4_C7
 
 BO_ 260 EPB_01: 8 EPB_D4
  SG_ EPB_01_CHK : 0|8@1+ (1,0) [0|255] ""  Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
@@ -85,7 +143,7 @@ BO_ 781 EPB_02: 4 EPB_D4
  SG_ EPB_Autoholdlampe : 8|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
  SG_ EPB_Bremsbelag_Warn : 9|1@1+ (1.0,0.0) [0.0|1] ""  Gateway_D4C7
 
-BO_ 256 ESP_01: 8 Gateway_D4C7
+BO_ 256 ESP_01: 8 XXX
  SG_ ESP_01_CHK : 0|8@1+ (1,0) [0|255] ""  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
  SG_ ESP_01_BZ : 8|4@1+ (1,0) [0|15] ""  Airbag_D4,EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
  SG_ ASR_Moment_langsam : 12|10@1+ (1,0) [0|1021] ""  Airbag_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
@@ -288,6 +346,138 @@ BO_ 1089 Getriebe_04: 8 Getriebe_AL551_951_D4_C7
  SG_ GE_Verlustmoment : 32|8@1+ (1,0) [0|254] ""  EPB_D4,Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
  SG_ GE_amax_moeglich : 42|9@1+ (0.024,-2.016) [-2.016|10.224] "Unit_MeterPerSeconSquar"  Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
  SG_ GE_Sumpftemperatur : 56|8@1+ (1,-58) [-58|196] "Unit_DegreCelsi"  Gateway_D4C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+
+BO_ 1424 Kessy_02: 8 Gateway_D4C7
+ SG_ KY_Funkschl_Nr : 0|4@1+ (1.0,0.0) [0.0|15] ""  Vector__XXX
+ SG_ KY_ID_Geb_autorisiert : 4|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_ID_Geb_steckt : 5|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_FFB_Frequenz : 6|2@1+ (1.0,0.0) [0.0|3] ""  Vector__XXX
+ SG_ KY_HF_Aktiv : 8|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_LF_Aktiv : 9|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_ELV_verr : 10|1@1+ (1.0,0.0) [0.0|1] ""  EPB_D4
+ SG_ KY_ELV_entr : 11|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_ELV_enable_Anforderung : 12|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_Valet_Parking : 14|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_Keyless_Verbau : 15|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_FBS_Fahrer_Hinweise : 16|3@1+ (1.0,0.0) [0.0|7] ""  Vector__XXX
+ SG_ FBS_Warn_Lenkung_def : 19|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ FBS_Warn_LenkVerriegelung_def : 20|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ FBS_Warn_Schluessel_Batt : 21|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ FBS_Prio_Warn_04 : 22|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ FBS_Prio_Warn_05 : 23|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_KYL_Fahrer_Hinweise : 24|3@1+ (1.0,0.0) [0.0|7] ""  Vector__XXX
+ SG_ KYL_Warn_kein_Schluessel : 27|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KYL_Warn_Kessy_defekt : 28|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_KYL_Prio_Warn_03 : 29|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_KYL_Prio_Warn_04 : 30|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_KYL_Prio_Warn_05 : 31|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_Schluessel_Soll : 32|4@1+ (1.0,0.0) [0.0|15] ""  Vector__XXX
+ SG_ KY_Schluessel_Ist : 36|4@1+ (1.0,0.0) [0.0|15] ""  Vector__XXX
+ SG_ KY_WFS_Safe : 40|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KY_WFS_LZ : 41|2@1+ (1.0,0.0) [0.0|3] ""  Vector__XXX
+ SG_ KY_StartStopp_Info : 43|2@1+ (1.0,0.0) [0.0|3] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KYL_Notzuendschloss : 45|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KYL_Warn_Notzuendschloss : 46|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ FBS_KD_Fehler : 47|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+
+BO_ 960 Klemmen_Status_01: 4 Gateway_D4C7
+ SG_ Klemmen_Status_01_CHK : 0|8@1+ (1,0) [0|255] ""  EPB_D4,Getriebe_AL551_951_D4_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ Klemmen_Status_01_BZ : 8|4@1+ (1,0) [0|15] ""  EPB_D4,Getriebe_AL551_951_D4_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ ZV_verriegelt_extern_soll_02 : 12|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ ZAS_Kl_S : 16|1@1+ (1.0,0.0) [0.0|1] ""  EPB_D4,Getriebe_AL551_951_D4_C7
+ SG_ ZAS_Kl_15 : 17|1@1+ (1.0,0.0) [0.0|1] ""  EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SCU_D4
+ SG_ ZAS_Kl_X : 18|1@1+ (1.0,0.0) [0.0|1] ""  EPB_D4,SCU_D4
+ SG_ ZAS_Kl_50 : 19|1@1+ (1.0,0.0) [0.0|1] ""  EPB_D4,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+
+BO_ 959 Klima_01: 8 Gateway_D4C7
+ SG_ KL_Drehz_Anh : 0|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_Vorwarn_Komp_ein : 1|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_Handshake_BEM : 2|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KL_Komp_Moment_alt : 3|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KL_Vorwarn_HHS_ein : 4|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_Vorwarn_HFS_ein : 5|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_Vorwarn_Zuheizer_ein : 6|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KL_KD_Fehler : 7|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KL_Comp_rev_rq : 8|8@1+ (50,0) [0|8600] "Unit_MinutInver"  Vector__XXX
+ SG_ KL_Charisma_FahrPr : 16|3@1+ (1.0,0.0) [0.0|7] ""  Vector__XXX
+ SG_ KL_Charisma_Status : 19|2@1+ (1.0,0.0) [0.0|3] ""  Vector__XXX
+ SG_ KL_Charisma_Umschaltung : 21|2@1+ (1.0,0.0) [0.0|3] ""  Vector__XXX
+ SG_ KL_Last_Kompr : 24|8@1+ (0.25,0) [0.00|63.50] "Unit_NewtoMeter"  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_Leistung_Hzg_Soll : 32|8@1+ (11,0) [0|2805] "Unit_Watt"  Vector__XXX
+ SG_ KL_Anf_KL : 40|8@1+ (0.4,0) [0.0|101.6] "Unit_PerCent"  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_4_Zonen : 48|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_AC_Schalter : 49|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KL_Zustand : 50|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_Thermomanagement : 51|2@1+ (1.0,0.0) [0.0|3] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_Comp_enable : 53|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KL_StartStopp_Info : 54|2@1+ (1.0,0.0) [0.0|3] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KL_el_Zuheizer_Stufe : 56|3@1+ (1.0,0.0) [0.0|7] ""  Motor_EDC17_D4
+ SG_ KL_Diag_Absperrvent : 59|4@1+ (1.0,0.0) [0.0|15] ""  Vector__XXX
+
+BO_ 779 Kombi_01: 8 Gateway_D4C7
+ SG_ KBI_ABS_Lampe : 0|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_ESP_Lampe : 1|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_BKL_Lampe : 2|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Airbag_Lampe : 3|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_SILA_gueltig : 4|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Lenkung_Lampe : 5|1@1+ (1,0) [0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Vorglueh_System_Lampe : 6|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Motor_EDC17_D4
+ SG_ KBI_NV_in_Anzeige : 7|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ Kombi_01_BZ : 8|4@1+ (1,0) [0|15] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Anzeigestatus_ACC : 12|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Oeldruck_Schalter : 15|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Tankwarnung : 16|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_MFA_v_Einheit_01 : 17|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_im_Stellgliedtest : 18|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Anzeigefehler_LDW : 19|2@1+ (1.0,0.0) [0.0|3] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Variante_USA : 21|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Oeldruckwarnung : 22|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Handbremse : 23|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_V_Digital : 24|9@1+ (1,0) [0|511] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_PLA_in_Anzeige : 33|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Anzeigefehler_NV : 34|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_angez_Geschw : 48|10@1+ (0.32,0) [0.00|325.12] "Unit_KiloMeterPerHour"  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_Einheit_Tacho : 58|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_Konsistenz_ACC : 59|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Fehler_Anzeige_ACC : 60|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_Anzeigefehler_SWA : 61|2@1+ (1.0,0.0) [0.0|3] ""  Getriebe_AL551_951_D4_C7
+ SG_ KBI_KD_Fehler : 63|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
+
+BO_ 1719 Kombi_02: 8 Gateway_D4C7
+ SG_ KBI_Kilometerstand : 0|20@1+ (1,0) [0|1048573] "Unit_KiloMeter"  Vector__XXX
+ SG_ KBI_Standzeit : 20|15@1+ (4,0) [0|131068] "Unit_Secon"  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_Reset_Standzeit : 35|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_Inhalt_Tank : 40|7@1+ (1,0) [0|126] "Unit_Liter"  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_FStatus_Tank : 47|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ KBI_QBit_Aussen_Temp_gef : 55|1@1+ (1.0,0.0) [0.0|1] ""  EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SCR_C7
+ SG_ KBI_Aussen_Temp_gef : 56|8@1+ (0.5,-50) [-50.0|75.0] "Unit_DegreCelsi"  EPB_D4,Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4,SCR_C7
+
+BO_ 1720 Kombi_03: 8 Gateway_D4C7
+ SG_ KBI_Reifenumfang : 0|12@1+ (1,0) [0|4095] "Unit_MilliMeter"  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7
+ SG_ WFS_Schluessel_Fahrberecht : 12|4@1+ (1.0,0.0) [0.0|15] ""  Vector__XXX
+ SG_ KBI_BCmE_aktiv : 16|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+ SG_ KBI_Sparhinweis_quittiert : 17|1@1+ (1.0,0.0) [0.0|1] ""  Vector__XXX
+
+BO_ 267 LS_01: 4 Gateway_D4C7
+ SG_ LS_01_CHK : 0|8@1+ (1,0) [0|255] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_01_BZ : 8|4@1+ (1,0) [0|15] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Hauptschalter : 12|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Abbrechen : 13|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Typ_Hauptschalter : 14|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Limiter : 15|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Tip_Setzen : 16|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_DL501_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Tip_Hoch : 17|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_DL501_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Tip_Runter : 18|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_DL501_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Tip_Wiederaufnahme : 19|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_DL501_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Verstellung_Zeitluecke : 20|2@1+ (1.0,0.0) [0.0|3] ""  Vector__XXX
+ SG_ MFL_Tip_Down : 22|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7
+ SG_ MFL_Tip_Up : 23|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7,Getriebe_VL381_C7
+ SG_ LS_Tiptronic_Fehler : 24|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7,Getriebe_DL501_C7
+ SG_ LS_Fehler : 25|1@1+ (1,0) [0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Codierung : 26|3@1+ (1.0,0.0) [0.0|7] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_Tip_Stufe_2 : 29|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ LS_GRA_ACC_2stufig : 30|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
+ SG_ MFL_M_Taste : 31|1@1+ (1.0,0.0) [0.0|1] ""  Getriebe_AL551_951_D4_C7
 
 BO_ 285 LH_EPS_02: 8 Gateway_D4C7
  SG_ EPS_02_CRC : 0|8@1+ (1,0) [0|255] ""  SCU_D4
