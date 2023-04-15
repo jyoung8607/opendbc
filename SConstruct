@@ -11,9 +11,6 @@ cereal_dir = Dir('.')
 python_path = sysconfig.get_paths()['include']
 cpppath = [
   '#',
-  '#cereal',
-  "#cereal/messaging",
-  "#opendbc/can",
   '/usr/lib/include',
   python_path
 ]
@@ -47,7 +44,7 @@ env = Environment(
     "#opendbc/can/",
   ],
   CFLAGS="-std=gnu11",
-  CXXFLAGS="-std=c++1z",
+  CXXFLAGS=["-std=c++1z"],
   CPPPATH=cpppath,
   CYTHONCFILESUFFIX=".cpp",
   tools=["default", "cython"]

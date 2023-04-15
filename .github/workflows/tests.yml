@@ -3,11 +3,12 @@ name: tests
 on: [push, pull_request]
 
 env:
-  RUN: docker run --shm-size 1G --rm opendbc /bin/sh -c
+  RUN: docker run -e PYTHONWARNINGS=error --shm-size 1G --rm opendbc /bin/sh -c
   BUILD: |
       docker pull $(grep -ioP '(?<=^from)\s+\S+' Dockerfile) || true
-      docker pull docker.io/commaai/opendbc:latest || true
-      docker build --cache-from docker.io/commaai/opendbc:latest -t opendbc -f Dockerfile .
+      docker pull ghcr.io/commaai/opendbc:latest || true
+      docker build --cache-from ghcr.io/commaai/opendbc:latest -t opendbc -f Dockerfile .
+  PYTHONWARNINGS: error
 
 jobs:
   test:
@@ -28,7 +29,7 @@ jobs:
       - name: Push to dockerhub
         if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && github.repository == 'commaai/opendbc'
         run: |
-          docker login -u wmelching -p ${{ secrets.COMMA_DOCKERHUB_TOKEN}}
-          docker tag opendbc docker.io/commaai/opendbc:latest
-          docker push docker.io/commaai/opendbc:latest
+          docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+          docker tag opendbc ghcr.io/commaai/opendbc:latest
+          docker push ghcr.io/commaai/opendbc:latest
 
