@@ -1,0 +1,48 @@
+VERSION ""
+
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_:
+
+BU_: XXX
+
+
+BO_ 999 DELETE_THIS_PLACEHOLDER_MESSAGE: 8 XXX
+ SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] ""  XXX
+ SG_ COUNTER : 8|4@1+ (1,0) [0|15] ""  XXX
+ SG_ SOME_MULTI_VALUE_THING : 12|4@1+ (1,0) [0|7] ""  XXX
+ SG_ SOME_SINGLE_VALUE_THING : 16|1@1+ (1,0) [0|1] ""  XXX
+
+
+CM_ SG_ 999 SOMETHING_ELSE "Example of a comment on a specific signal" ;
+
+VAL_ 999 SOME_MULTI_VALUE_THING 0 "init" 1 "foo" 2 "bar" 3 "baz" ;
