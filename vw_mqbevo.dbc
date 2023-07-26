@@ -152,7 +152,7 @@ BO_ 178 ESP_19: 8 Gateway_MQB
  SG_ ESP_VR_Radgeschw_02 : 48|16@1+ (0.0075,0) [0|491.49] "Unit_KiloMeterPerHour" Airbag_MQB,Getriebe_DQ_Hybrid_MQB,Getriebe_DQ_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
 
 BO_ 252 ESP_NEW_1: 48 XXX
- SG_ CHECKSUM : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ XCHECKSUM : 7|8@0+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 11|4@0+ (1,0) [0|15] "" XXX
  SG_ WHEEL_SPEED_FL : 64|16@1+ (0.0075,0) [0|65535] "" XXX
  SG_ WHEEL_SPEED_FR : 80|16@1+ (0.0075,0) [0|65535] "" XXX
@@ -274,7 +274,7 @@ BO_ 264 Fahrwerk_01: 8 XXX
  SG_ Fahrwerk_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
 
 BO_ 267 MOTOR_NEW_1: 32 XXX
- SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ XCHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 8|4@1+ (1,0) [0|15] "" XXX
  SG_ ACCEL_PEDAL : 12|8@1+ (0.4,0) [0|255] "" XXX
 
@@ -432,7 +432,7 @@ BO_ 302 ACC_07: 8 XXX
  SG_ ACC_Sollbeschleunigung_02 : 53|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
 
 BO_ 313 ESP_NEW_3: 32 XXX
- SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ XCHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 11|4@0+ (1,0) [0|15] "" XXX
  SG_ BRAKE_PRESSED_1 : 16|1@0+ (1,0) [0|1] "" XXX
  SG_ BRAKE_PRESSED_2 : 27|1@0+ (1,0) [0|1] "" XXX
@@ -440,7 +440,7 @@ BO_ 313 ESP_NEW_3: 32 XXX
  SG_ BRAKE_PRESSURE : 76|10@1+ (1,0) [0|1023] "" XXX
 
 BO_ 317 MOTOR_NEW_2: 32 XXX
- SG_ CHECKSUM : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ XCHECKSUM : 7|8@0+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 11|4@0+ (1,0) [0|15] "" XXX
  SG_ CRUISE_STATE : 22|2@0+ (1,0) [0|3] "" XXX
  SG_ UNKNOWN : 76|10@1+ (1,0) [0|1023] "" XXX
