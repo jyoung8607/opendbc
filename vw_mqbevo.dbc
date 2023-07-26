@@ -273,6 +273,11 @@ BO_ 264 Fahrwerk_01: 8 XXX
  SG_ Fahrwerk_01_CRC : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ Fahrwerk_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
 
+BO_ 267 MOTOR_NEW_1: 32 XXX
+ SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ COUNTER : 8|4@1+ (1,0) [0|15] "" XXX
+ SG_ ACCEL_PEDAL : 12|8@1+ (0.4,0) [0|255] "" XXX
+
 BO_ 278 ESP_10: 8 Gateway_MQB
  SG_ ESP_10_CRC : 0|8@1+ (1,0) [0|255] "" Airbag_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
  SG_ ESP_10_BZ : 8|4@1+ (1,0) [0|15] "" Airbag_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
@@ -425,6 +430,17 @@ BO_ 302 ACC_07: 8 XXX
  SG_ ACC_Folgebeschl : 32|8@1+ (0.03,-4.6) [-4.6|2.99] "Unit_MeterPerSeconSquar" XXX
  SG_ ACC_Sollbeschleunigung_02 : 53|11@1+ (0.005,-7.22) [-7.22|3.005] "Unit_MeterPerSeconSquar" XXX
 
+BO_ 313 ESP_NEW_3: 32 XXX
+ SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ COUNTER : 11|4@0+ (1,0) [0|15] "" XXX
+ SG_ BRAKE_PRESSED_1 : 16|1@0+ (1,0) [0|1] "" XXX
+ SG_ BRAKE_PRESSED_2 : 27|1@0+ (1,0) [0|1] "" XXX
+ SG_ BRAKE_PRESSED_3 : 48|1@0+ (1,0) [0|1] "" XXX
+ SG_ BRAKE_PRESSURE : 76|10@1+ (1,0) [0|1023] "" XXX
+
+BO_ 387 CAMERA_NEW_3_HF: 64 XXX
+ SG_ NEW_SIGNAL_1 : 28|12@1+ (1,0) [0|15] "" XXX
+
 BO_ 391 EV_Gearshift: 8 XXX
  SG_ CHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 8|4@1+ (1,0) [0|15] "" XXX
@@ -435,9 +451,24 @@ BO_ 418 ESP_15: 8 XXX
  SG_ ESP_15_CRC : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ ESP_15_BZ : 8|4@1+ (1,0) [0|15] "" XXX
 
+BO_ 420 CAMERA_NEW_11: 8 XXX
+
 BO_ 427 ESP_33: 8 XXX
  SG_ ESP_33_CRC : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ ESP_33_BZ : 8|4@1+ (1,0) [0|15] "" XXX
+
+BO_ 496 CAMERA_NEW_10: 8 XXX
+
+BO_ 519 CAMERA_NEW_1_HF: 64 XXX
+ SG_ NEW_SIGNAL_2 : 36|11@1+ (1,0) [0|2047] "" XXX
+ SG_ NEW_SIGNAL_1 : 48|12@1+ (1,0) [0|4095] "" XXX
+
+BO_ 564 CAMERA_NEW_2_HF: 64 XXX
+
+BO_ 589 NEW_MSG_24D: 64 XXX
+ SG_ NEW_SIGNAL_1 : 24|12@1+ (1,0) [0|4095] "" XXX
+
+BO_ 619 CAMERA_NEW_5: 8 XXX
 
 BO_ 679 ACC_13: 8 XXX
  SG_ ACC_Regelgeschw : 12|10@1+ (0.32,0) [0|327.04] "Unit_KiloMeterPerHour" XXX
@@ -463,6 +494,13 @@ BO_ 681 ACC_15: 8 XXX
 BO_ 695 RCTA_01: 8 XXX
  SG_ RCTA_01_CRC : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ RCTA_01_BZ : 8|4@1+ (1,0) [0|15] "" XXX
+
+BO_ 771 HCA_NEW: 24 XXX
+ SG_ ENABLED_1 : 13|2@1+ (1,0) [0|3] "" XXX
+ SG_ ASSIST_TORQUE : 16|16@1+ (1,0) [0|65535] "" XXX
+ SG_ UNKNOWN_MAYBE_DRIVER_INPUT : 33|2@0+ (1,0) [0|3] "" XXX
+ SG_ ASSIST_DIRECTION : 39|1@0+ (1,0) [0|1] "" XXX
+ SG_ ENABLED_2 : 66|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 779 Kombi_01: 8 Gateway_MQB
  SG_ KBI_ABS_Lampe : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -599,6 +637,8 @@ BO_ 870 Blinkmodi_02: 8 XXX
  SG_ Left_Turn_Exterior_Bulb_2 : 27|1@1+ (1,0) [0|1] "" XXX
  SG_ Right_Turn_Exterior_Bulb_2 : 28|1@1+ (1,0) [0|1] "" XXX
  SG_ Fast_Send_Rate_Active : 37|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 873 CAMERA_NEW_4: 8 XXX
 
 BO_ 901 Charisma_01: 8 Gateway_MQB
  SG_ CHA_Ziel_FahrPr_ALR : 0|4@1+ (1,0) [0|15] "" Vector__XXX
@@ -1271,6 +1311,26 @@ BO_ 1720 Kombi_03: 8 XXX
  SG_ KBI_Tankinhalt_hochaufl : 26|14@1+ (0.01,0) [0|163.81] "Unit_Liter" XXX
  SG_ KBI_Max_Tankinhalt : 40|8@1+ (0.5,0) [0|126.5] "" XXX
  SG_ KBI_Reifenumfang_Sekundaer : 48|12@1+ (1,0) [0|4095] "Unit_MilliMeter" XXX
+
+BO_ 316495015 CAMERA_NEW_6: 32 XXX
+
+BO_ 380196019 CAMERA_NEW_16: 16 XXX
+
+BO_ 380196036 CAMERA_NEW_18: 8 XXX
+
+BO_ 389224720 CAMERA_NEW_13: 3 XXX
+
+BO_ 389226768 CAMERA_NEW_12: 2 XXX
+
+BO_ 389241616 CAMERA_NEW_14: 5 XXX
+
+BO_ 401604687 CAMERA_NEW_9: 8 XXX
+
+BO_ 441800082 CAMERA_NEW_15: 8 XXX
+
+BO_ 441800100 CAMERA_NEW_8: 64 XXX
+
+BO_ 441800101 CAMERA_NEW_7: 64 XXX
 
 BO_ 2549088277 KN_Airbag_01: 8 Airbag_MQB
  SG_ Airbag_01_KompSchutz : 0|1@1+ (1,0) [0|1] "" Vector__XXX
