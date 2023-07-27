@@ -277,6 +277,7 @@ BO_ 267 MOTOR_NEW_1: 32 XXX
  SG_ XCHECKSUM : 0|8@1+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 8|4@1+ (1,0) [0|15] "" XXX
  SG_ ACCEL_PEDAL : 12|8@1+ (0.4,0) [0|255] "" XXX
+ SG_ TSK_STATUS : 88|3@1+ (1,0) [0|7] "" XXX
 
 BO_ 278 ESP_10: 8 Gateway_MQB
  SG_ ESP_10_CRC : 0|8@1+ (1,0) [0|255] "" Airbag_MQB,Motor_Diesel_MQB,Motor_Hybrid_MQB,Motor_Otto_MQB
@@ -442,7 +443,7 @@ BO_ 313 ESP_NEW_3: 32 XXX
 BO_ 317 MOTOR_NEW_2: 32 XXX
  SG_ XCHECKSUM : 7|8@0+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 11|4@0+ (1,0) [0|15] "" XXX
- SG_ CRUISE_STATE : 22|2@0+ (1,0) [0|3] "" XXX
+ SG_ NEW_SIGNAL_1 : 36|1@0+ (1,0) [0|1] "" XXX
  SG_ UNKNOWN : 76|10@1+ (1,0) [0|1023] "" XXX
 
 BO_ 387 CAMERA_NEW_3_HF: 64 XXX
