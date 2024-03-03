@@ -1,7 +1,7 @@
 VERSION "PrimaryActuatorCAN"
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -958,7 +958,7 @@ VAL_ 338 VDM_LfcRequestType 0 "LFC_Request_Type_No_Request" 1 "LFC_Request_Type_
 VAL_ 338 VDM_StcActiveRequest 0 "Stc_NotActive" 1 "Stc_Active" ;
 VAL_ 338 VDM_StcFault 0 "Stc_NoFault" 1 "Stc_Fault" ;
 VAL_ 338 VDM_SteeringModeRequest 0 "VDM_SteeringModeRequest_Default" 1 "VDM_SteeringModeRequest_Normal" 2 "VDM_SteeringModeRequest_Sport" 3 "VDM_SteeringModeRequest_Comfort" ;
-VAL_ 336 VDM_Prndl_Request 0 "VDM_Prndl_Request_No_Req" 1 "VDM_Prndl_Request_Park" 2 "VDM_Prndl_Request_Reverse" 3 "VDM_Prndl_Request_Neutral" 4 "VDM_Prndl_Request_Drive" ;
+VAL_ 336 VDM_Prndl_Request 0 "U" 1 "P" 2 "R" 3 "N" 4 "D" ;
 VAL_ 336 VDM_Prndl_Status 0 "VDM_Prndl_Status_Not_Defined" 1 "VDM_Prndl_Status_Park" 2 "VDM_Prndl_Status_Reverse" 3 "VDM_Prndl_Status_Neutral" 4 "VDM_Prndl_Status_Drive" ;
 VAL_ 336 VDM_PropsnActv 0 "VDM_PropsnActv_Not_Defined" 1 "VDM_PropsnActv_Active" 2 "VDM_PropsnActv_Inactive" ;
 VAL_ 336 VDM_VehicleSpeedQ 0 "VDM_VehSpdQ_Inactive" 1 "VDM_VehSpdQ_Active" ;
