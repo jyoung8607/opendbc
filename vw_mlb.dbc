@@ -150,6 +150,9 @@ BO_ 1312 Airbag_02: 8 Airbag_D4
  SG_ AB_Sitzpos_Sens_FA : 56|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
  SG_ AB_Sitzpos_Sens_BF : 58|2@1+ (1.0,0.0) [0.0|3] ""  Gateway_D4C7
 
+BO_ 927 Gateway_06: 8 XXX
+ SG_ AB_Gurtschloss_FA : 30|2@1+ (1,0) [0|3] "" XXX
+
 BO_ 1633 Anhaenger_01: 3 Gateway_D4C7
  SG_ AAG_BZ : 0|4@1+ (1,0) [0|15] ""  Getriebe_AL551_951_D4_C7,Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
  SG_ AAG_Bremsl_durch_ECD : 5|1@1+ (1.0,0.0) [0.0|1] ""  Motor_EDC17_D4,Motor_ME17_BY,Motor_MED17_SIMOS8_D4
