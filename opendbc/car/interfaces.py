@@ -19,6 +19,7 @@ from opendbc.car.common.numpy_fast import clip
 from opendbc.car.values import PLATFORMS
 
 GearShifter = structs.CarState.GearShifter
+DriveMode = structs.CarState.DriveMode
 
 V_CRUISE_MAX = 145
 MAX_CTRL_SPEED = (V_CRUISE_MAX + 4) * CV.KPH_TO_MS
@@ -42,6 +43,12 @@ GEAR_SHIFTER_MAP: dict[str, GearShifter] = {
   'B': GearShifter.brake, 'BRAKE': GearShifter.brake,
 }
 
+DEFAULT_DRIVE_MODE_MAP: dict[GearShifter, DriveMode] = {
+  GearShifter.park: DriveMode.park,
+  GearShifter.drive: DriveMode.drive,
+  GearShifter.neutral: DriveMode.neutral,
+  GearShifter.reverse: DriveMode.reverse,
+}
 
 class LatControlInputs(NamedTuple):
   lateral_acceleration: float
@@ -249,6 +256,9 @@ class CarInterfaceBase(ABC):
     if ret.cruiseState.speedCluster == 0:
       ret.cruiseState.speedCluster = ret.cruiseState.speed
 
+    if ret.driveMode == DriveMode.unknown:
+      ret.driveMode = self.CS.update_drive_mode(ret.gearShifter)
+
     # save for next iteration
     self.CS.out = ret
 
@@ -356,6 +366,11 @@ class CarStateBase(ABC):
     if gear is None:
       return GearShifter.unknown
     return GEAR_SHIFTER_MAP.get(gear.upper(), GearShifter.unknown)
+
+  @staticmethod
+  def update_drive_mode(selected_gear: GearShifter, extra_gears: dict=None) -> DriveMode:
+    drive_mode_map = DEFAULT_DRIVE_MODE_MAP | extra_gears
+    return drive_mode_map.get(selected_gear, DriveMode.unknown)
 
   @staticmethod
   def get_can_parser(CP):

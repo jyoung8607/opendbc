@@ -1,7 +1,7 @@
 import numpy as np
 from opendbc.can.parser import CANParser
 from opendbc.car import structs
-from opendbc.car.interfaces import CarStateBase
+from opendbc.car.interfaces import CarStateBase, update_drive_mode
 from opendbc.car.common.conversions import Conversions as CV
 from opendbc.car.volkswagen.values import DBC, CANBUS, NetworkLocation, TransmissionType, GearShifter, \
                                                       CarControllerParams, VolkswagenFlags
@@ -86,6 +86,7 @@ class CarState(CarStateBase):
         ret.gearShifter = GearShifter.reverse
       else:
         ret.gearShifter = GearShifter.drive
+    ret.driveMode = update_drive_mode(ret.gearShifter)
 
     # Update door and trunk/hatch lid open status.
     ret.doorOpen = any([pt_cp.vl["Gateway_72"]["ZV_FT_offen"],

@@ -88,6 +88,7 @@ class CarState:
 
   # gear
   gearShifter: 'CarState.GearShifter' = field(default_factory=lambda: CarState.GearShifter.unknown)
+  driveMode: `CarState.DriveMode` = field(default_factory=lambda: CarState.DriveMode.unknown)
 
   # button presses
   buttonEvents: list['CarState.ButtonEvent'] = auto_field()
@@ -141,6 +142,13 @@ class CarState:
     brake = auto()
     eco = auto()
     manumatic = auto()
+
+  class DriveMode(StrEnum):
+    unknown = auto()
+    park = auto()
+    drive = auto()
+    neutral = auto()
+    reverse = auto()
 
   # send on change
   @auto_dataclass
