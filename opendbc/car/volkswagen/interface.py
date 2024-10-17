@@ -76,5 +76,6 @@ class CarInterface(CarInterfaceBase):
     ret.autoResumeSng = ret.minEnableSpeed == -1
     #ret.longitudinalTuning.kpV = [0.2]
     #ret.longitudinalTuning.kiV = [0.1]
+    ret.longitudinalActuatorDelay = 0.3
 
     return ret
