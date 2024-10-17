@@ -74,7 +74,7 @@ class CarInterface(CarInterfaceBase):
     ret.vEgoStarting = 0.1
     ret.vEgoStopping = 0.5
     ret.autoResumeSng = ret.minEnableSpeed == -1
-    ret.longitudinalTuning.kpV = [0.2]
-    ret.longitudinalTuning.kiV = [0.1]
+    #ret.longitudinalTuning.kpV = [0.2]
+    #ret.longitudinalTuning.kiV = [0.1]
 
     return ret
