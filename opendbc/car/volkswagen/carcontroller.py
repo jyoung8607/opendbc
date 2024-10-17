@@ -1,3 +1,4 @@
+import math
 from opendbc.can.packer import CANPacker
 from opendbc.car import DT_CTRL, apply_driver_steer_torque_limits, structs
 from opendbc.car.common.conversions import Conversions as CV
@@ -8,6 +9,8 @@ from opendbc.car.volkswagen.values import CANBUS, CarControllerParams, Volkswage
 
 VisualAlert = structs.CarControl.HUDControl.VisualAlert
 LongCtrlState = structs.CarControl.Actuators.LongControlState
+
+ACCELERATION_DUE_TO_GRAVITY = 9.81  # m/s^2
 
 
 class CarController(CarControllerBase):
@@ -76,11 +79,16 @@ class CarController(CarControllerBase):
     # **** Acceleration Controls ******************************************** #
 
     if self.frame % self.CCP.ACC_CONTROL_STEP == 0 and self.CP.openpilotLongitudinalControl:
+      # Null-out the drivetrain coordinator's slow/imprecise pitch compensation and replace with the openpilot localizer
+      stock_pitch_correction = math.sin(CS.stock_pitch_angle) * ACCELERATION_DUE_TO_GRAVITY
+      openpilot_pitch_correction = math.sin(CC.orientationNED[1]) * ACCELERATION_DUE_TO_GRAVITY
+      calibrated_accel = actuators.accel - stock_pitch_correction + openpilot_pitch_correction
+
       acc_control = self.CCS.acc_control_value(CS.out.cruiseState.available, CS.out.accFaulted, CC.longActive)
-      accel = clip(actuators.accel, self.CCP.ACCEL_MIN, self.CCP.ACCEL_MAX) if CC.longActive else 0
+      accel_request = clip(calibrated_accel, self.CCP.ACCEL_MIN, self.CCP.ACCEL_MAX) if CC.longActive else 0
       stopping = actuators.longControlState == LongCtrlState.stopping
       starting = actuators.longControlState == LongCtrlState.pid and (CS.esp_hold_confirmation or CS.out.vEgo < self.CP.vEgoStopping)
-      can_sends.extend(self.CCS.create_acc_accel_control(self.packer_pt, CANBUS.pt, CS.acc_type, CC.longActive, accel,
+      can_sends.extend(self.CCS.create_acc_accel_control(self.packer_pt, CANBUS.pt, CS.acc_type, CC.longActive, accel_request,
                                                          acc_control, stopping, starting, CS.esp_hold_confirmation))
 
     # **** HUD Controls ***************************************************** #

@@ -1,3 +1,4 @@
+import math
 import numpy as np
 from opendbc.can.parser import CANParser
 from opendbc.car import structs
@@ -17,6 +18,7 @@ class CarState(CarStateBase):
     self.esp_hold_confirmation = False
     self.upscale_lead_car_signal = False
     self.eps_stock_values = False
+    self.stock_pitch_angle = 0.
 
   def create_button_events(self, pt_cp, buttons):
     button_events = []
@@ -133,6 +135,7 @@ class CarState(CarStateBase):
 
     ret.accFaulted = pt_cp.vl["TSK_06"]["TSK_Status"] in (6, 7)
 
+    self.stock_pitch_angle = math.atan(pt_cp.vl["Motor_16"]["TSK_Steigung"] / 100.)  # gradient percentage to radians
     self.esp_hold_confirmation = bool(pt_cp.vl["ESP_21"]["ESP_Haltebestaetigung"])
     ret.cruiseState.standstill = self.CP.pcmCruise and self.esp_hold_confirmation
 
@@ -285,6 +288,7 @@ class CarState(CarStateBase):
       ("Motor_14", 10),     # From J623 Engine control module
       ("Airbag_02", 5),     # From J234 Airbag control module
       ("Kombi_01", 2),      # From J285 Instrument cluster
+      ("Motor_16", 2),      # From J623 Engine control module
       ("Blinkmodi_02", 1),  # From J519 BCM (sent at 1Hz when no lights active, 50Hz when active)
       ("Kombi_03", 0),      # From J285 instrument cluster (not present on older cars, 1Hz when present)
     ]
