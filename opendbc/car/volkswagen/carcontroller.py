@@ -22,6 +22,7 @@ class CarController(CarControllerBase):
     self.ext_bus = CANBUS.pt if CP.networkLocation == structs.CarParams.NetworkLocation.fwdCamera else CANBUS.cam
 
     self.apply_steer_last = 0
+    self.accel_request = 0
     self.gra_acc_counter_last = None
     self.eps_timer_soft_disable_alert = False
     self.hca_frame_timer_running = 0
@@ -82,13 +83,13 @@ class CarController(CarControllerBase):
       # Null-out the drivetrain coordinator's slow/imprecise pitch compensation and replace with the openpilot localizer
       stock_pitch_correction = math.sin(CS.stock_pitch_angle) * ACCELERATION_DUE_TO_GRAVITY
       openpilot_pitch_correction = math.sin(CC.orientationNED[1]) * ACCELERATION_DUE_TO_GRAVITY
-      calibrated_accel = actuators.accel - stock_pitch_correction + openpilot_pitch_correction
+      self.accel_request = actuators.accel - stock_pitch_correction + openpilot_pitch_correction
 
       acc_control = self.CCS.acc_control_value(CS.out.cruiseState.available, CS.out.accFaulted, CC.longActive)
-      accel_request = clip(calibrated_accel, self.CCP.ACCEL_MIN, self.CCP.ACCEL_MAX) if CC.longActive else 0
+      self.accel_request = clip(self.accel_request, self.CCP.ACCEL_MIN, self.CCP.ACCEL_MAX) if CC.longActive else 0
       stopping = actuators.longControlState == LongCtrlState.stopping
       starting = actuators.longControlState == LongCtrlState.pid and (CS.esp_hold_confirmation or CS.out.vEgo < self.CP.vEgoStopping)
-      can_sends.extend(self.CCS.create_acc_accel_control(self.packer_pt, CANBUS.pt, CS.acc_type, CC.longActive, accel_request,
+      can_sends.extend(self.CCS.create_acc_accel_control(self.packer_pt, CANBUS.pt, CS.acc_type, CC.longActive, self.accel_request,
                                                          acc_control, stopping, starting, CS.esp_hold_confirmation))
 
     # **** HUD Controls ***************************************************** #
@@ -120,6 +121,7 @@ class CarController(CarControllerBase):
     new_actuators = actuators.as_builder()
     new_actuators.steer = self.apply_steer_last / self.CCP.STEER_MAX
     new_actuators.steerOutputCan = self.apply_steer_last
+    new_actuators.accel = self.accel_request
 
     self.gra_acc_counter_last = CS.gra_stock_values["COUNTER"]
     self.frame += 1
