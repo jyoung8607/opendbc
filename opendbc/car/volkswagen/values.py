@@ -265,7 +265,7 @@ class CAR(Platforms):
       VWCarDocs("Volkswagen Golf R 2015-19"),
       VWCarDocs("Volkswagen Golf SportsVan 2015-20"),
     ],
-    VolkswagenCarSpecs(mass=1397, wheelbase=2.62),
+    VolkswagenCarSpecs(mass=1397, wheelbase=2.62, steerRatio=16.7),
     chassis_codes={"5G", "AU", "BA", "BE"},
     wmis={WMI.VOLKSWAGEN_MEXICO_CAR, WMI.VOLKSWAGEN_EUROPE_CAR},
   )
