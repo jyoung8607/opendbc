@@ -46,6 +46,7 @@ class CarState(CarStateBase):
   def update(self, can_parsers) -> structs.CarState:
     pt_cp = can_parsers[Bus.pt]
     cam_cp = can_parsers[Bus.cam]
+    aux_cp = can_parsers[Bus.aux]
     ext_cp = pt_cp if self.CP.networkLocation == NetworkLocation.fwdCamera else cam_cp
 
     if self.CP.flags & VolkswagenFlags.PQ:
@@ -66,22 +67,22 @@ class CarState(CarStateBase):
 
     if self.CP.flags & VolkswagenFlags.MEB:
       # MEB-specific
-      self.qfk_curvature = -pt_cp.vl["QFK_01"]["Curvature"] * (1, -1)[int(pt_cp.vl["QFK_01"]["Curvature_VZ"])]
+      self.qfk_curvature = -cam_cp.vl["QFK_01"]["Curvature"] * (1, -1)[int(cam_cp.vl["QFK_01"]["Curvature_VZ"])]
       ret.fuelGauge = pt_cp.vl["Motor_16"]["MO_Energieinhalt_BMS"]  # TODO: is this available on MQB as well?
 
       ret.wheelSpeeds = self.get_wheel_speeds(
-        pt_cp.vl["ESC_51"]["VL_Radgeschw"],
-        pt_cp.vl["ESC_51"]["VR_Radgeschw"],
-        pt_cp.vl["ESC_51"]["HL_Radgeschw"],
-        pt_cp.vl["ESC_51"]["HR_Radgeschw"],
+        aux_cp.vl["ESC_51"]["VL_Radgeschw"],
+        aux_cp.vl["ESC_51"]["VR_Radgeschw"],
+        aux_cp.vl["ESC_51"]["HL_Radgeschw"],
+        aux_cp.vl["ESC_51"]["HR_Radgeschw"],
       )
 
-      ret.yawRate = pt_cp.vl["ESC_50"]["Yaw_Rate"] * (1, -1)[int(pt_cp.vl["ESC_50"]["Yaw_Rate_Sign"])] * CV.DEG_TO_RAD
-      hca_status = self.CCP.hca_status_values.get(pt_cp.vl["QFK_01"]["LatCon_HCA_Status"])
+      ret.yawRate = aux_cp.vl["ESC_50"]["Yaw_Rate"] * (1, -1)[int(aux_cp.vl["ESC_50"]["Yaw_Rate_Sign"])] * CV.DEG_TO_RAD
+      hca_status = self.CCP.hca_status_values.get(cam_cp.vl["QFK_01"]["LatCon_HCA_Status"])
 
       drive_mode = ret.gearShifter == GearShifter.drive
       ret.gas = pt_cp.vl["Motor_54"]["Accelerator_Pressure"]
-      ret.brake = pt_cp.vl["ESC_51"]["Brake_Pressure"]
+      ret.brake = aux_cp.vl["ESC_51"]["Brake_Pressure"]
       ret.brakePressed = bool(pt_cp.vl["Motor_14"]["MO_Fahrer_bremst"]) # includes regen braking by user
       ret.parkingBrake = pt_cp.vl["Gateway_73"]["EPB_Status"] in (1, 4) # EPB closing or closed
 
@@ -92,8 +93,8 @@ class CarState(CarStateBase):
                           pt_cp.vl["ZV_02"]["ZV_HD_offen"]])
 
       if self.CP.enableBsm:
-        ret.leftBlindspot = bool(ext_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Info_Left"]) or bool(ext_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Warn_Left"])
-        ret.rightBlindspot = bool(ext_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Info_Right"]) or bool(ext_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Warn_Right"])
+        ret.leftBlindspot = bool(aux_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Info_Left"]) or bool(aux_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Warn_Left"])
+        ret.rightBlindspot = bool(aux_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Info_Right"]) or bool(aux_cp.vl["MEB_Side_Assist_01"]["Blind_Spot_Warn_Right"])
 
       ret.stockFcw = bool(pt_cp.vl["VMM_02"]["FCW_Active"]) or bool(ext_cp.vl["AWV_03"]["FCW_Active"])
       ret.stockAeb = bool(pt_cp.vl["VMM_02"]["AEB_Active"])
@@ -168,15 +169,15 @@ class CarState(CarStateBase):
     ret.vEgoRaw = float(np.mean([ret.wheelSpeeds.fl, ret.wheelSpeeds.fr, ret.wheelSpeeds.rl, ret.wheelSpeeds.rr]))
     ret.vEgo, ret.aEgo = self.update_speed_kf(ret.vEgoRaw)
 
-    ret.steeringAngleDeg = pt_cp.vl["LWI_01"]["LWI_Lenkradwinkel"] * (1, -1)[int(pt_cp.vl["LWI_01"]["LWI_VZ_Lenkradwinkel"])]
-    ret.steeringRateDeg = pt_cp.vl["LWI_01"]["LWI_Lenkradw_Geschw"] * (1, -1)[int(pt_cp.vl["LWI_01"]["LWI_VZ_Lenkradw_Geschw"])]
+    ret.steeringAngleDeg = cam_cp.vl["LWI_01"]["LWI_Lenkradwinkel"] * (1, -1)[int(cam_cp.vl["LWI_01"]["LWI_VZ_Lenkradwinkel"])]
+    ret.steeringRateDeg = cam_cp.vl["LWI_01"]["LWI_Lenkradw_Geschw"] * (1, -1)[int(cam_cp.vl["LWI_01"]["LWI_VZ_Lenkradw_Geschw"])]
     ret.steeringTorque = pt_cp.vl["LH_EPS_03"]["EPS_Lenkmoment"] * (1, -1)[int(pt_cp.vl["LH_EPS_03"]["EPS_VZ_Lenkmoment"])]
     ret.steeringPressed = abs(ret.steeringTorque) > self.CCP.STEER_DRIVER_ALLOWANCE
     ret.steerFaultTemporary, ret.steerFaultPermanent = self.update_hca_state(hca_status, drive_mode)
 
     ret.gasPressed = ret.gas > 0
-    ret.espActive = bool(pt_cp.vl["ESP_21"]["ESP_Eingriff"])
-    ret.espDisabled = pt_cp.vl["ESP_21"]["ESP_Tastung_passiv"] != 0
+    ret.espActive = bool(aux_cp.vl["ESP_21"]["ESP_Eingriff"])
+    ret.espDisabled = aux_cp.vl["ESP_21"]["ESP_Tastung_passiv"] != 0
     ret.seatbeltUnlatched = pt_cp.vl["Airbag_02"]["AB_Gurtschloss_FA"] != 3
 
     ret.standstill = ret.vEgoRaw == 0
@@ -187,9 +188,9 @@ class CarState(CarStateBase):
 
     self.eps_stock_values = pt_cp.vl["LH_EPS_03"]
     self.ldw_stock_values = cam_cp.vl["LDW_02"] if self.CP.networkLocation == NetworkLocation.fwdCamera else {}
-    self.gra_stock_values = pt_cp.vl["GRA_ACC_01"]
+    self.gra_stock_values = aux_cp.vl["GRA_ACC_01"]
 
-    ret.buttonEvents = self.create_button_events(pt_cp, self.CCP.BUTTONS)
+    ret.buttonEvents = self.create_button_events(aux_cp, self.CCP.BUTTONS)
 
     self.frame += 1
     return ret
@@ -411,19 +412,12 @@ class CarState(CarStateBase):
   def get_can_parsers_meb(CP):
     pt_messages = [
       # sig_address, frequency
-      ("LWI_01", 100),            # From J500 Steering Assist with integrated sensors
-      ("GRA_ACC_01", 33),         # From J533 CAN gateway (via LIN from steering wheel controls)
       ("Airbag_02", 5),           # From J234 Airbag control module
       ("Motor_14", 10),           # From J623 Engine control module
       ("Motor_16", 2),            # From J623 Engine control module
       ("Blinkmodi_02", 1),        # From J519 BCM (sent at 1Hz when no lights active, 50Hz when active)
       ("LH_EPS_03", 100),         # From J500 Steering Assist with integrated sensors
       ("ZV_02", 5),               # From ZV
-      ("QFK_01", 100),            # From Steering
-      ("ESP_21", 50),             #
-      ("ESC_51", 100),            #
-      ("Motor_54", 10),           #
-      ("ESC_50", 50),             #
       ("VMM_02", 50),             #
       ("Gateway_73", 20),         #
       ("Motor_51", 50),           #
@@ -432,24 +426,32 @@ class CarState(CarStateBase):
     if CP.networkLocation == NetworkLocation.fwdCamera:
       # Radars are here on CanBus.main
       pt_messages += MebExtraSignals.fwd_radar_messages
-      if CP.enableBsm:
-        pt_messages += MebExtraSignals.bsm_radar_messages
 
     cam_messages = [
       # sig_address, frequency
       ("LDW_02", 10),     # From R242 Driver assistance camera
       ("TA_01", 10),      # From R242 Driver assistance camera (Travel Assist)
+      ("LWI_01", 100),            # From J500 Steering Assist with integrated sensors
+      ("QFK_01", 100),            # From Steering
     ]
 
     if CP.networkLocation == NetworkLocation.gateway:
       # Radars are here on CanBus.camera
       cam_messages += MebExtraSignals.fwd_radar_messages
-      if CP.enableBsm:
-        cam_messages += MebExtraSignals.bsm_radar_messages
+
+    aux_messages = [
+      ("GRA_ACC_01", 33),         # From J533 CAN gateway (via LIN from steering wheel controls)
+      ("ESP_21", 50),             #
+      ("ESC_51", 100),            #
+      ("ESC_50", 50),             #
+    ]
+    if CP.enableBsm:
+      aux_messages += MebExtraSignals.bsm_radar_messages
 
     return {
       Bus.pt: CANParser(DBC[CP.carFingerprint][Bus.pt], pt_messages, CanBus(CP).main),
       Bus.cam: CANParser(DBC[CP.carFingerprint][Bus.pt], cam_messages, CanBus(CP).camera),
+      Bus.aux: CANParser(DBC[CP.carFingerprint][Bus.pt], aux_messages, CanBus(CP).aux),
     }
 
 
